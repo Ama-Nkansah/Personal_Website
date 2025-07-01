@@ -68,9 +68,19 @@
 @layer base{
   :root {
   --background: hsl(230, 50%, 95%);
+  background: 'hsl(45, 100%, 95%)', // Cream/Beige
+          foreground: 'hsl(220, 15%, 20%)', // Deep Gray
+          primary: 'hsl(180, 40%, 45%)', // Teal (Muted for light mode)
+          'primary-foreground': 'hsl(45, 100%, 99%)', // Soft Off-White
+          border: 'hsl(45, 25%, 85%)', // Gentle Beige
 }
 
 .dark {
   --background: hsl(230, 15%, 15%);
+  background: 'hsl(220, 15%, 15%)', // Slate Gray
+          foreground: 'hsl(220, 10%, 85%)', // Light Gray
+          primary: 'hsl(180, 50%, 50%)', // Vibrant Teal
+          'primary-foreground': 'hsl(220, 10%, 95%)', // Near White
+          border: 'hsl(220, 15%, 25%)', // Lighter Slate Gray
 }
 }
