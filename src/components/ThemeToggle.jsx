@@ -21,11 +21,11 @@ export const ThemeToggle = () => {
 };
 
   return (
-    <button onClick={toggleTheme} className = {cn("fixed top-5 right-5 p-2 mt-0.5 rounded-full transition-colors duration-300 bg-gray-500",
+    <button onClick={toggleTheme} className = {cn("fixed top-5 right-4 p-2 rounded-full transition-colors duration-300 bg-gray-500",
       "focus:outline-1 z-50 dark:outline-fuchsia-200"
     )}
     >
-      {isDarkMode ? < Moon className="h-5 w-5 text-black-900"/> : <Sun className="h-5 w-5 text-black"/>}
+      {isDarkMode ? < Moon className="h-5 w-5 text-black-900 dark:text-fuchsia-200"/> : <Sun className="h-5 w-5 text-black"/>}
     </button>
   );
 }
