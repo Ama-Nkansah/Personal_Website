@@ -9,7 +9,7 @@ export const ThemeToggle = () => {
     setIsDarkMode(document.documentElement.classList.contains("dark"));
   }, []);
   
- const toggleTheme = () => {
+ const toggleTheme = () => { 
   const newMode = !isDarkMode;
   setIsDarkMode(newMode);
 
@@ -21,11 +21,11 @@ export const ThemeToggle = () => {
 };
 
   return (
-    <button onClick={toggleTheme} className = {cn("fixed top-5 right-5 p-2 rounded-full transition-colors duration-300",
-      "focus:outline-1"
+    <button onClick={toggleTheme} className = {cn("fixed top-5 right-5 p-2 mt-0.5 rounded-full transition-colors duration-300 bg-gray-500",
+      "focus:outline-1 z-50 dark:outline-fuchsia-200"
     )}
     >
-      {isDarkMode ? < Moon className="h-5 w-5 text-blue-900"/> : <Sun className="h-5 w-5 text-amber-300"/>}
+      {isDarkMode ? < Moon className="h-5 w-5 text-black-900"/> : <Sun className="h-5 w-5 text-black"/>}
     </button>
   );
 }

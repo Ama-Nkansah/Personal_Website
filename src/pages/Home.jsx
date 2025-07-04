@@ -3,7 +3,7 @@ import { Navbar } from "../components/Navbar";
 
 export const Home = ()=>{
   return(
-    <div className="min-h-screen bg-white text-gray-900 dark:bg-[hsl(196,14%,15%)] dark:text-gray-100 overflow-x-hidden ">
+    <div className="min-h-screen bg-gradient-to-br from-white to-fuchsia-300 text-gray-900 dark:bg-none dark:bg-[#21292c] dark:text-gray-100 overflow-x-hidden ">
        <ThemeToggle/>
        <Navbar/>
 
