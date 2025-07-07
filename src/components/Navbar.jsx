@@ -28,9 +28,6 @@ export const Navbar = () => {
 
   
   return (
-  //<nav className={cn("fixed z-40 w-full bg-fuchsia-300 h-18 p-3 transition-all duration-300",
-   //isScrolled ? "py-3 bg-background/80 backdrop-blur-lg shadow-xs" : "py-5")}
- // >
   <div>
     <div className="container flex items-center px-5 py-4 gap-2">
       <a className="text-xl font-medium flex items-center gap-1 dark:text-fuchsia-200 mt-0.5">

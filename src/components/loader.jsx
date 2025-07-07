@@ -1,0 +1,52 @@
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const Loader = ({ onComplete }) => {
+  const [progress, setProgress] = useState(0); // % progress
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval); // stop
+          setTimeout(onComplete, 300); // call parent function
+          return 100;
+        }
+        const jump = Math.floor(Math.random() * 10) + 1;
+        return Math.min(prev + jump, 100);
+      });
+    }, 110);
+
+    return () => clearInterval(interval);
+  }, [onComplete]);
+
+  return (
+    <div className="flex flex-col items-center justify-center h-screen bg-black text-white">
+      <div className="w-64 h-2 bg-gray-700 rounded-full overflow-hidden mt-4">
+        <motion.div
+          className="h-full bg-gradient-to-r from-fuchsia-950 to-fuchsia-50-400"
+          style={{ width: `${progress}%` }}
+          initial={{ width: 0 }}
+          animate={{ width: `${progress}%` }}
+          transition={{ ease: "easeInOut", duration: 0.2 }}
+        />
+      </div>
+
+      <motion.div
+        key={progress}
+        className="mt-6 text-3xl font-mono tracking-widest"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
+        {progress}%
+      </motion.div>
+
+      <div className="absolute bottom-6 text-xs text-gray-500">
+        &copy; {new Date().getFullYear()} Ama Nkansah. All rights reserved.
+      </div>
+    </div>
+  );
+};
+console.log("Loader component loaded");
+
+export default Loader;
