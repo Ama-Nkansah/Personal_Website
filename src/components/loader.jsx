@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Loader = ({ onComplete }) => {
-  const [progress, setProgress] = useState(0); // % progress
+  const [progress, setProgress] = useState(0); 
 
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
-          clearInterval(interval); // stop
-          setTimeout(onComplete, 300); // call parent function
+          clearInterval(interval); 
+          setTimeout(onComplete, 300); 
           return 100;
         }
         const jump = Math.floor(Math.random() * 10) + 1;
@@ -24,11 +24,8 @@ const Loader = ({ onComplete }) => {
     <div className="flex flex-col items-center justify-center h-screen bg-black text-white">
       <div className="w-64 h-2 bg-gray-700 rounded-full overflow-hidden mt-4">
         <motion.div
-          className="h-full bg-gradient-to-r from-fuchsia-950 to-fuchsia-50-400"
+          className="h-full bg-gradient-to-r from-fuchsia-950 to-fuchsia-400"
           style={{ width: `${progress}%` }}
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
-          transition={{ ease: "easeInOut", duration: 0.2 }}
         />
       </div>
 
@@ -47,6 +44,5 @@ const Loader = ({ onComplete }) => {
     </div>
   );
 };
-console.log("Loader component loaded");
 
 export default Loader;
