@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import {Typewriter}  from 'react-simple-typewriter';
 import myImage from "../assets/cartoonify.jpg" ;
+import  Title from "../components/TypewriterTitle";
 
 function Hero(){
   return (
@@ -25,25 +25,9 @@ function Hero(){
         <h1 className="md:text-6xl font-bold text-center mt-10 text-fuchsia-600 dark:text-fuchsia-300 -translate-y-100 translate-x-75">
           👋🏾 Ama Nkansah here,
         </h1>
-        
-        <Typewriter
-            words={[
-              'Software Engineer',
-              'AI Enthusiast',
-            ]}
-            loop={1}
-            cursor
-            cursorStyle="_"
-            typeSpeed={70}
-            delaySpeed={1000}
-          />
-
-        <motion.div
-         initial={{ opacity: 0, scale: 0.95 }}
-         animate={{ opacity: 1, scale: 1 }}
-         transition={{ duration: 1, ease: "easeOut" }}>
-        </motion.div>
-
+        <h2 className="text-2xl -translate-y-94 translate-x-224">
+          Software Engineer & <Title/>
+        </h2>
         <p className="text-center md:text-xl mt-4 text-gray-700 dark:text-gray-300 -translate-y-90 translate-x-85">
           Welcome to my portfolio!
         </p>
