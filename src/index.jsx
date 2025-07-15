@@ -10,5 +10,5 @@ root.render(
     <MyThemeProvider>
       <App />
     </MyThemeProvider>
-  </StrictMode>,
+  </StrictMode>
 )

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import myImage from "../assets/cartoonify.jpg" ;
 import  Title from "../components/TypewriterTitle";
+import {SocialIcons} from "./socials";  
 
 function Hero(){
   return (
@@ -21,6 +22,7 @@ function Hero(){
     </motion.div>
 
     {/* my text */}
+
     <div>
         <h1 className="md:text-6xl font-bold text-center mt-10 text-fuchsia-600 dark:text-fuchsia-300 -translate-y-100 translate-x-75">
           👋🏾 Ama Nkansah here,
@@ -28,11 +30,16 @@ function Hero(){
         <h2 className="text-2xl -translate-y-94 translate-x-224">
           Software Engineer & <Title/>
         </h2>
-        <p className="text-center md:text-xl mt-4 text-gray-700 dark:text-gray-300 -translate-y-90 translate-x-85">
-          Welcome to my portfolio!
+        <p className="text-center text-sm italic mt-2 text-gray-700 dark:text-gray-300 -translate-y-90 translate-x-78">
+          “I build what I dream, and I debug until it works.” – Ama Nkansah
         </p>
     </div>
-  </div>
+
+    <button className="backdrop-blur-md bg-black/50 dark:bg-fuchsia-200 transition-all duration-300 border-zinc-500 px-4 py-2 rounded-full mt-5 -translate-y-85 translate-x-250">
+      <a href="#" className="text-lg font-semibold text-black hover:text-fuchsia-200 dark:hover:text-fuchsia-900 ease-in-out ">View Resume</a>
+    </button>
+    <SocialIcons/>
+</div>
   )
 }
 
