@@ -5,20 +5,15 @@ import {NotFound} from "./pages/NotFound";
 import Loader from './components/loader'; 
 
 function App() {
-  const [loadingDone, setLoadingDone] = useState(false);
 
   return (
     <div>
-      <BrowserRouter>
-      {loadingDone ? (
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        ) : (
-          <Loader onComplete={() => setLoadingDone(true)} />
-      )}
-      </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
     </div>
   );
  

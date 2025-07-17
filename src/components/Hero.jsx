@@ -21,7 +21,6 @@ function Hero(){
       </motion.div>
     </motion.div>
 
-    {/* my text */}
 
     <div>
         <h1 className="md:text-6xl font-bold text-center mt-10 text-fuchsia-600 dark:text-fuchsia-300 -translate-y-100 translate-x-75">
