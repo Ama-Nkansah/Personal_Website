@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { ThemeToggle } from "../components/ThemeToggle";
-import { Navbar } from "../components/Navbar";
-import { Hero } from "../components/Hero"; 
-import Loader from "../components/loader";
+import { ThemeToggle } from "../components/home/ThemeToggle";
+import { Navbar } from "../components/common/Navbar";
+import { Hero } from "../components/home/Hero"; 
+import Loader from "../components/home/loader";
 
 export const Home = () => {
   const [loadingDone, setLoadingDone] = useState(false);

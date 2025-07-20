@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import myImage from "../assets/cartoonify.jpg" ;
-import  Title from "../components/TypewriterTitle";
-import {SocialIcons} from "./socials";  
+import myImage from "../../assets/cartoonify.jpg";
+import  Title from "../home/TypewriterTitle";
+import {SocialIcons} from "../common/socials";  
 
 function Hero(){
   return (
