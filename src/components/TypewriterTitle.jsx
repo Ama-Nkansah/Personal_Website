@@ -7,6 +7,7 @@ export default function Title(){
             words={[
               'AI Enthusiast',
               'Full-Stack Developer',
+              'Tech Blogger',
             ]}
             loop={0}
             cursor

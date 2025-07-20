@@ -14,7 +14,7 @@ export const Home = () => {
     if (isFreshVisit) {
       setShouldShowLoader(true);
     } else {
-      setLoadingDone(true); // no need to load
+      setLoadingDone(true);
     }
   }, []);
 
