@@ -17,8 +17,8 @@ export const Navbar = () => {
   
   return (
   <div>
-    <div className="container flex items-center px-5 py-4 gap-2">
-      <Link to="/" className="text-xl font-medium flex items-center gap-1 dark:text-fuchsia-200 mt-0.5">
+    <div className="container -translate-y-3 flex items-center px-5 gap-2">
+      <Link to="/" className="text-xl font-medium flex items-center gap-1 dark:text-fuchsia-200">
         <span>
           <span className="text-glow text-foreground stroke-black"style={{ fontFamily: "Rubik Bubbles, system-ui", fontSize: '24px', fontStyle:"normal" }}>Ama </span> <CodeXml className="inline-block"/> 
         </span>

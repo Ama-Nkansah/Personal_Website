@@ -2,39 +2,11 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/*html, body {
-  background-color: hsl(316, 100%, 97%);
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-}*/
-
-/*:root {
-  --background: hsl(316, 100%, 97%);
-  --foreground: hsl(270, 10%, 20%);
-  --primary: hsl(316, 100%, 86%);
-  --primary-foreground: hsl(270, 100%, 10%);
-  --border: hsl(316, 70%, 90%);
-  --card: hsl(0, 0%, 100%);
-
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
-  --animate-fade-in: fade-in 0.7s ease-out forwards;
-  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
-  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
-  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
-  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
-  --animate-meteor: meteor 5s linear infinite;
+.delius-regular {
+  font-family: "Delius", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
-
-.dark {
-  --background: hsl(270, 25%, 12%);
-  --foreground: hsl(316, 70%, 90%);
-  --primary: hsl(316, 100%, 86%);
-  --primary-foreground: hsl(270, 100%, 10%);
-  --border: hsl(270, 30%, 30%);
-  --card: hsl(270, 20%, 20%);
-}*/
 
 @keyframes float {
   0%, 100% {

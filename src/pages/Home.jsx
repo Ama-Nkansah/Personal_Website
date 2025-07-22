@@ -3,6 +3,7 @@ import { ThemeToggle } from "../components/home/ThemeToggle";
 import { Navbar } from "../components/common/Navbar";
 import { Hero } from "../components/home/Hero"; 
 import Loader from "../components/home/loader";
+import AboutTeaser from '../components/about/aboutTeaser';    
 
 export const Home = () => {
   const [loadingDone, setLoadingDone] = useState(false);
@@ -27,6 +28,7 @@ export const Home = () => {
       <ThemeToggle />
       <Navbar />
       <Hero />
+      <AboutTeaser/>
     </div>
   );
 };

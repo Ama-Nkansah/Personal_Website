@@ -8,6 +8,7 @@ export default function Title(){
               'AI Enthusiast',
               'Full-Stack Developer',
               'Tech Blogger',
+              'Content Creator',
             ]}
             loop={0}
             cursor
