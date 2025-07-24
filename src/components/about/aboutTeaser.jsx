@@ -18,10 +18,10 @@ export default function AboutTeaser() {
           I needed more — more creativity, more problem-solving, more impact. That “aha!” moment came in Level 200, when I transitioned fully into software engineering.
           Since then, I’ve been obsessed with turning ideas into code that solves real problems and scales with purpose.
         </p>
-        <img src= {myImg} className="col-start-2 h-[80%] w-[40%] aspect-square rounded-full translate-10"/>
+        <img src= {myImg} className="col-start-2 h-[100%] w-[40%] rounded-full aspect-square translate-y-5 translate-x-50"/>
 
           <h1 className="px-60 py-30 col-start-1 text-3xl font-bold text-shadow-lg/20 text-shadow-fuchsia-200">My Approach</h1>
-          <p className="col-start-2 grid-wra pt-5 px-10 delius-regular ">
+          <p className="col-start-2 grid-wra pt-13 px-10 delius-regular ">
           I like to keep things simple, fast, and effective. I believe in testing ideas early, building smart MVPs, and improving as we go. Every project I touch is built with clarity, structure, and growth in mind.
           I work full-stack using tools like React, Tailwind, Node.js, Express, and databases. I also integrate AI and cloud tools to make things even smarter.
           <br />
@@ -31,11 +31,11 @@ export default function AboutTeaser() {
           Build great systems and help more people feel like they belong in tech.  
           <br />  
           <br />
-          👇 Want to know how I got here, what tools I love, or what fuels my creativity?
+          👇 Want to know more about my journey, what tools I love, or what fuels my creativity?
         </p>
 
         <div className=" flex justify-end p-3 translate-x-170">
-        <a href="https://ama-nkansah.vercel.app" className="text-fuchsia-400 hover:underline">See more<MoveRight className="inline-block ml-3 text-fuchsia-400"/></a>
+        <a href="https://ama-nkansah.vercel.app" className="text-fuchsia-700 dark:text-fuchsia-300 hover:underline">See more<MoveRight className="inline-block ml-3 text-fuchsia-700 dark:text-fuchsia-300"/></a>
         </div>
 
       </div>
