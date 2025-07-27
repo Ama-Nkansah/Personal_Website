@@ -27,10 +27,10 @@ export const Navbar = () => {
     
     <nav className={cn("z-10 top-7 left-1/3 translate-x-25 fixed flex items-center gap-5 rounded-full py-2 px-4 backdrop-blur-md bg-black/50 text-black dark:bg-fuchsia-200 transition-all duration-300 border-zinc-500 ")}>
       <Link to="/" className="hover:text-fuchsia-200 transition-colors duration-100dark:hover:text-fuchsia-900">Home</Link>
-      <a href="/about" className="hover:text-fuchsia-200 transition-colors duration-100 dark:hover:text-fuchsia-900">About</a>
-      <a href="/portfolio" className="hover:text-fuchsia-200 transition-colors duration-100 dark:hover:text-fuchsia-900">Portfolio</a>
-      <a href="/contact" className="hover:text-fuchsia-200 transition-colors duration-100 dark:hover:text-fuchsia-900">Contact</a>
-      <a href="/blog" className="hover:text-fuchsia-200 transition-colors duration-100 dark:hover:text-fuchsia-900">Blog</a>
+      <Link to="/about" className="hover:text-fuchsia-200 transition-colors duration-100 dark:hover:text-fuchsia-900">About</Link>
+      <Link to="/portfolio" className="hover:text-fuchsia-200 transition-colors duration-100 dark:hover:text-fuchsia-900">Portfolio</Link>
+      <Link to="/contact" className="hover:text-fuchsia-200 transition-colors duration-100 dark:hover:text-fuchsia-900">Contact</Link>
+      <Link to="/blog" className="hover:text-fuchsia-200 transition-colors duration-100 dark:hover:text-fuchsia-900">Blog</Link>
     </nav>
    </div>
     )};

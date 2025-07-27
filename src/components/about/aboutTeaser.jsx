@@ -1,8 +1,16 @@
 import {MoveRight} from "lucide-react";
 import myImg from "../../assets/my-img.jpg";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function AboutTeaser() {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/about', { state: { scrollToFull: true } });
+  };
+  
   return (
     <div className="h-full justify-center bg-white dark:bg-[#2b3336] text-gray-900 dark:text-gray-100 p-8">
 
@@ -35,7 +43,11 @@ export default function AboutTeaser() {
         </p>
 
         <div className=" flex justify-end p-3 translate-x-170">
-        <a href="https://ama-nkansah.vercel.app" className="text-fuchsia-700 dark:text-fuchsia-300 hover:underline">See more<MoveRight className="inline-block ml-3 text-fuchsia-700 dark:text-fuchsia-300"/></a>
+
+        <button onClick={handleClick} className="text-fuchsia-700 dark:text-fuchsia-300 hover:underline">
+          See My Full Journey<MoveRight className="inline-block ml-3 text-fuchsia-700 dark:text-fuchsia-300"/>
+        </button>
+        
         </div>
 
       </div>

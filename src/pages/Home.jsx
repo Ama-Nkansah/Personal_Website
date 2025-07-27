@@ -11,13 +11,19 @@ export const Home = () => {
 
   useEffect(() => {
     const navType = window.performance.getEntriesByType("navigation")[0]?.type;
-    const isFreshVisit = navType === "reload" || navType === "navigate";
+     console.log("NAV TYPE:", navType);
+
+     // TODO: Fix bug where browser back arrow shows loader due to "reload" nav type.
+     
+    const isFreshVisit = navType === "navigate" || navType === "reload";
     if (isFreshVisit) {
       setShouldShowLoader(true);
     } else {
       setLoadingDone(true);
+      
     }
   }, []);
+ 
 
   if (!loadingDone && shouldShowLoader) {
     return <Loader onComplete={() => setLoadingDone(true)} />;
