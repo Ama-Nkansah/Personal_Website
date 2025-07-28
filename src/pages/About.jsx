@@ -1,4 +1,3 @@
-import AboutTeaser from "../components/about/aboutTeaser";
 import AboutMPA from "../components/about/aboutMPA";
 
 export const About = ()=>{

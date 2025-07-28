@@ -3,20 +3,19 @@ import myImg from "../../assets/my-img.jpg";
 import { useNavigate } from 'react-router-dom';
 
 
-export default function AboutTeaser() {
+export default function AboutTeaser({isFullPage = false,showButton = true }) {
 
   const navigate = useNavigate();
-
   const handleClick = () => {
     navigate('/about', { state: { scrollToFull: true } });
   };
-  
+
   return (
     <div className="h-full justify-center bg-white dark:bg-[#2b3336] text-gray-900 dark:text-gray-100 p-8">
 
       <h1 className="w-1/2 translate-x-70 text-3xl font-bold text-shadow-lg/20 text-shadow-fuchsia-200">About Me</h1>
 
-      <div className="grid grid-cols-2 grid-rows-2 mt-5 gap-1 h-screen border border-fuchsia-300">
+      <div className= {`grid grid-cols-2 grid-rows-2 mt-5 gap-1 h-screen ${isFullPage ? "" : "border border-fuchsia-300"}`}>
         <p className="col-start-1 p-10 py-15 delius-regular">
           I build smart, functional products out of raw ideas whether you’re a founder with a plan or just figuring it out. 
           Behind the code, I’m all about systems thinking, clean architecture, and building things that can actually grow.
@@ -43,11 +42,12 @@ export default function AboutTeaser() {
         </p>
 
         <div className=" flex justify-end p-3 translate-x-170">
-
-        <button onClick={handleClick} className="text-fuchsia-700 dark:text-fuchsia-300 hover:underline">
-          See My Full Journey<MoveRight className="inline-block ml-3 text-fuchsia-700 dark:text-fuchsia-300"/>
-        </button>
-        
+          { showButton ? (
+            <button onClick={handleClick} className="text-fuchsia-700 dark:text-fuchsia-300 hover:underline">
+            See My Full Journey<MoveRight className="inline-block ml-3 text-fuchsia-700 dark:text-fuchsia-300"/>
+          </button>
+           ) : null
+           }
         </div>
 
       </div>
