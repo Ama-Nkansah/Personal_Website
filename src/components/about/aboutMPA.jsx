@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import AboutTeaser from "./aboutTeaser";
+import Carousel from "./carousel"; 
 
 export default function AboutMPA() {
 
@@ -31,11 +32,9 @@ export default function AboutMPA() {
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
        👆 Return to Preview
       </button>
-      <h1 className="text-4xl font-bold text-center mt-10">About Me</h1>
-      <p className="max-w-2xl mx-auto mt-6 text-lg">
-        This is the full about section where you can add more details about yourself, your work, and your experiences.
-      </p>
-
+      <h1 className="text-4xl font-bold text-center my-5">About Me</h1>
+      <Carousel />
+      
 </div>
   </div>
   )};
