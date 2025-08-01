@@ -32,7 +32,7 @@ export default function AboutMPA() {
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
        👆 Return to Preview
       </button>
-      <h1 className="text-4xl font-bold text-center ">About Me</h1>
+      <h1 className="text-4xl font-bold text-center -translate-y-14 ">About Me</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-5 -translate-y-20">
          <Carousel />

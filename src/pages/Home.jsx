@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ThemeProvider } from "../hooks/ThemeContext";
 import { ThemeToggle } from "../components/home/ThemeToggle";
 import { Navbar } from "../components/common/Navbar";
 import { Hero } from "../components/home/Hero"; 
@@ -6,23 +7,26 @@ import Loader from "../components/home/loader";
 import AboutTeaser from '../components/about/aboutTeaser';    
 
 export const Home = () => {
+
   const [loadingDone, setLoadingDone] = useState(false);
   const [shouldShowLoader, setShouldShowLoader] = useState(false);
 
-  useEffect(() => {
-    const navType = window.performance.getEntriesByType("navigation")[0]?.type;
-     console.log("NAV TYPE:", navType);
+useEffect(() => {
+  const browserNavType =
+      performance.getEntriesByType("navigation")[0]?.type;
+      console.log("Browser Navigation Type:", browserNavType);
 
-     // TODO: Fix bug where browser back arrow shows loader due to "reload" nav type.
-     
-    const isFreshVisit = navType === "navigate" || navType === "reload";
-    if (isFreshVisit) {
-      setShouldShowLoader(true);
-    } else {
-      setLoadingDone(true);
-      
-    }
-  }, []);
+
+  const isFreshVisit =
+  browserNavType === "navigate" ||
+  browserNavType === "reload";
+
+  if (isFreshVisit) {
+    setShouldShowLoader(true);
+  } else {
+    setLoadingDone(true);
+  }
+}, []); 
  
 
   if (!loadingDone && shouldShowLoader) {
@@ -31,10 +35,12 @@ export const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-fuchsia-300 text-gray-900 dark:bg-none dark:bg-[#21292c] dark:text-gray-100 overflow-x-hidden">
-      <ThemeToggle />
-      <Navbar />
-      <Hero />
-      <AboutTeaser/>
+      <ThemeProvider>
+        <ThemeToggle/>
+        <Navbar />
+        <Hero />
+       <AboutTeaser/>
+      </ThemeProvider>
     </div>
   );
 };
