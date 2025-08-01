@@ -13,7 +13,7 @@ export default function AboutTeaser({isFullPage = false,showButton = true }) {
 
   return (
     <div className="h-full justify-center bg-white dark:bg-[#2b3336] text-gray-900 dark:text-gray-100 p-8">
-      <Navbar className="" />
+      <Navbar/>
       <h1 className= {`w-1/2 translate-x-70 text-3xl font-bold text-shadow-lg/20 text-shadow-fuchsia-400 dark:text-shadow-none ${isFullPage ? "translate-y-9" : ""}`}>About Me</h1>
 
       <div className= {`grid grid-cols-2 grid-rows-2 mt-5 gap-1 h-screen ${isFullPage ? "" : "border border-fuchsia-300"}`}>
