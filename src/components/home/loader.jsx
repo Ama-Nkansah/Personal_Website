@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import {Footer} from "../common/footer.jsx";
 
 const Loader = ({ onComplete }) => {
   const [progress, setProgress] = useState(0); 
@@ -37,10 +38,7 @@ const Loader = ({ onComplete }) => {
       >
         {progress}%
       </motion.div>
-
-      <div className="absolute bottom-6 text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} Ama Nkansah. All rights reserved.
-      </div>
+      <Footer />
     </div>
   );
 };

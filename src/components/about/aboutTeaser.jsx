@@ -14,7 +14,7 @@ export default function AboutTeaser({isFullPage = false,showButton = true }) {
   return (
     <div className="h-full justify-center bg-white dark:bg-[#2b3336] text-gray-900 dark:text-gray-100 p-8">
       <Navbar/>
-      <h1 className= {`w-1/2 translate-x-70 text-3xl font-bold text-shadow-lg/20 text-shadow-fuchsia-400 dark:text-shadow-none ${isFullPage ? "translate-y-9" : ""}`}>About Me</h1>
+      <h1 className= {`w-1/2 translate-x-70 text-3xl font-bold text-shadow-lg/20 text-shadow-fuchsia-400 ${isFullPage ? "translate-y-9" : ""}`}>About Me</h1>
 
       <div className= {`grid grid-cols-2 grid-rows-2 mt-5 gap-1 h-screen ${isFullPage ? "" : "border border-fuchsia-300"}`}>
         <p className="col-start-1 p-10 py-15 text-base delius-regular">
@@ -28,7 +28,7 @@ export default function AboutTeaser({isFullPage = false,showButton = true }) {
         </p>
         <img src= {myImg} className="col-start-2 h-[100%] w-[40%] rounded-full aspect-square translate-y-5 translate-x-50"/>
 
-          <h1 className="px-60 py-30 col-start-1 text-3xl font-bold text-shadow-lg/20 text-shadow-fuchsia-400 dark:text-shadow-none">My Approach</h1>
+          <h1 className="px-60 py-30 col-start-1 text-3xl font-bold text-shadow-lg/20 text-shadow-fuchsia-400">My Approach</h1>
           <p className="col-start-2 grid-wra pt-13 px-10 text-base delius-regular ">
           I like to keep things simple, fast, and effective. I believe in testing ideas early, building smart MVPs, and improving as we go. Every project I touch is built with clarity, structure, and growth in mind.
           I work full-stack using tools like React, Tailwind, Node.js, Express, and databases. I also integrate AI and cloud tools to make things even smarter.
