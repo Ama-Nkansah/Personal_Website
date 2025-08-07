@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import AboutTeaser from "./aboutTeaser";
 import Carousel from "./carousel"; 
+import { ThemeToggle } from "../home/ThemeToggle";
 
 export default function AboutMPA() {
 
@@ -18,10 +19,12 @@ export default function AboutMPA() {
 
   return(
   <div>
+    <ThemeToggle />
     <AboutTeaser
      isFullPage={true}
      showButton={false}
      />
+     
 
     <div id="about-full" className="min-h-screen bg-gradient-to-br from-white to-fuchsia-300 text-gray-900 dark:bg-none dark:bg-[#21292c] dark:text-gray-100 overflow-x-hidden">
 
@@ -36,7 +39,7 @@ export default function AboutMPA() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-5 -translate-y-20">
          <Carousel />
-          <p className="px-10 text-base delius-regular mt-50 text-center">
+          <p className="px-10 text-base delius-regular mt-40 text-center">
           👈 This space captures pieces of me—snapshots from events I’ve attended,
           moments I’ve volunteered, and quiet milestones that often go unseen. It’s more than just a collection of pictures;
           it’s a reflection of the effort, intention, and heart I’ve poured into every step of my journey.

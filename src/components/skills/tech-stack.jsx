@@ -1,21 +1,36 @@
 import {Navbar} from "../common/Navbar";
+import { Expertise } from "./expertise";  
 
 export const Stack = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-fuchsia-300 text-gray-900 dark:bg-none dark:bg-[#21292c] dark:text-gray-100 overflow-x-hidden">
       <Navbar />
+      
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">My Skills</h1>
-        <p className="text-lg mb-4">Here are some of the skills I have acquired over the years:</p>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Node.js</li>
-          <li>CSS and Tailwind CSS</li>
-          <li>HTML</li>
-          <li>Git and GitHub</li>
-        </ul>
+        <h1 className="text-5xl font-bold mt-20 translate-x-143 delius-regular ">My Skills & <span className="text-fuchsia-500 dark:text-fuchsia-300">Expertise</span></h1>
+        <p className="text-lg my-10 translate-x-123 leading-relaxed">
+            A comprehensive overview of my technical skills and proficiency levels across 
+            <br/><span className="block ml-35">various technologies and frameworks.</span>
+            <hr className=" mt-5 translate-x-60 bg-fuchsia-400 border border-fuchsia-400 h-1 w-30 rounded-full" />
+          </p>
       </div>
+
+      <div className="flex items-center justify-center gap-5">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20shadow-md" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md"/> 
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md "/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg" className="w-20 h-20 p-3 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"  className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactnative/reactnative-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md"/>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md" />         
+      </div>
+      <Expertise />
+
     </div>
   );
 }
