@@ -1,5 +1,7 @@
 import {Navbar} from "../common/Navbar";
 import { Expertise } from "./expertise";  
+import {Card} from "../common/card";
+
 
 export const Stack = () => {
   return (
@@ -30,6 +32,7 @@ export const Stack = () => {
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md" />         
       </div>
       <Expertise />
+      <Card />
 
     </div>
   );
