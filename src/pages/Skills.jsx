@@ -1,6 +1,7 @@
 import {Stack} from "../components/skills/tech-stack";
 import {Navbar} from "../components/common/Navbar";
 import { ThemeToggle } from "../components/home/ThemeToggle";
+import { Footer } from "../components/common/footer"; 
 
 export const Skills = () => {
   return (
@@ -8,6 +9,7 @@ export const Skills = () => {
       <ThemeToggle />
       <Navbar />
       <Stack />
+      <Footer className="translate-72"/>
     </div>
   );
 }
