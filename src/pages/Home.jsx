@@ -39,7 +39,7 @@ useEffect(() => {
         <Navbar />
         <Hero />
        <AboutTeaser/>
-       <Footer />
+       <Footer className='absolute bottom-6' />
     </div>
   );
 };

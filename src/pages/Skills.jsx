@@ -9,7 +9,7 @@ export const Skills = () => {
       <ThemeToggle />
       <Navbar />
       <Stack />
-      <Footer className="translate-72"/>
+      <Footer styles="absolute -bottom-150 right-165 mb-1"/>
     </div>
   );
 }
