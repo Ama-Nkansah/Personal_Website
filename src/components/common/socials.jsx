@@ -2,7 +2,7 @@ import { Github, Linkedin, Twitter }  from "lucide-react";
 
 export function SocialIcons(){
 return(
-<div className="flex gap-4 sm:-translate-x-45 sm:translate-y-29 md:translate-x-0 md:-translate-y-40 md:justify-center mt-4 order-4">
+<div className="flex gap-4 -translate-x-43 translate-y-12  md:translate-x-0 md:-translate-y-40 md:justify-center mt-4 order-4">
   <a
     href="https://github.com/Ama-Nkansah"
     target="_blank"
