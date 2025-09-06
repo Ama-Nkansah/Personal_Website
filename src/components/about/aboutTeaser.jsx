@@ -1,5 +1,4 @@
-import {MoveRight} from "lucide-react";
-import {Navbar} from "../common/Navbar";
+import {MoveRight} from "lucide-react";import {Navbar} from "../common/Navbar";
 import myImg from "../../assets/my-img.jpg";
 import { useNavigate } from 'react-router-dom';
 
@@ -12,11 +11,11 @@ export default function AboutTeaser({isFullPage = false,showButton = true }) {
   };
 
   return (
-    <div className="h-screen justify-center bg-white dark:bg-[#2b3336] text-gray-900 dark:text-gray-100 p-8">
-      <Navbar/>
+    <div className="h-full justify-center bg-white dark:bg-[#2b3336] text-gray-900 dark:text-gray-100 p-8">
+      
       <h1 className= {`w-1/2 translate-x-24 sm:translate-x-70 text-3xl font-bold text-shadow-lg/20 text-shadow-fuchsia-400 ${isFullPage ? "translate-y-9" : ""}`}>About Me</h1>
 
-      <div className= {`grid sm:grid-cols-2 sm:grid-rows-2 mt-5 mb-50 gap-1 h-screen pb-380 sm:pb-0 ${isFullPage ? "" : "border border-fuchsia-300"}`}>
+      <div className= {`grid sm:grid-cols-2 sm:grid-rows-2 mt-5 gap-1 h pb-380 sm:pb-0 ${isFullPage ? "" : "border border-fuchsia-300"}`}>
         <p className="order-1 sm:order-0 sm:col-start-1 p-8 -translate-y-9 md:-translate-y-0 md:p-10 md:py-15 text-base delius-regular">
           I build smart, functional products out of raw ideas whether you’re a founder with a plan or just figuring it out. 
           Behind the code, I’m all about systems thinking, clean architecture, and building things that can actually grow.
@@ -26,7 +25,7 @@ export default function AboutTeaser({isFullPage = false,showButton = true }) {
           I needed more — more creativity, more problem-solving, more impact. That “aha!” moment came in Level 200, when I transitioned fully into software engineering.
           Since then, I’ve been obsessed with turning ideas into code that solves real problems and scales with purpose.
         </p>
-        <img src= {myImg} className="order-2 sm:order-0 sm:col-start-2 h-[100%] w-[55%] sm:h-[100%] sm:w-[40%] rounded-full aspect-square -translate-y-8 translate-20 md:translate-y-5 md:translate-x-50"/>
+        <img src= {myImg} className="order-2 sm:order-0 sm:col-start-2 h-[100%] w-[55%] sm:h-[70%] sm:w-[40%] rounded-full aspect-square -translate-y-8 translate-20 md:translate-y-14 md:translate-x-50"/>
 
           <h1 className="order-3 sm:order-0 sm:px-60 sm:py-30 md:col-start-1 text-3xl font-bold text-shadow-lg/20 translate-5 translate-x-15 sm:translate-x-0 sm:translate-0 text-shadow-fuchsia-400">My Approach</h1>
           <p className=" order-4 sm:order-0  md:col-start-2 pt-13 px-10 text-base delius-regular ">
@@ -42,7 +41,7 @@ export default function AboutTeaser({isFullPage = false,showButton = true }) {
           👇 Want to know more about my journey, what tools I love, or what fuels my creativity?
         </p>
 
-        <div className=" flex justify-end p-3 translate-x-170">
+        <div className=" flex justify-end p-3 translate-x-150">
           { showButton ? (
             <button onClick={handleClick} className="text-fuchsia-700 dark:text-fuchsia-300 hover:underline">
             See My Full Journey<MoveRight className="inline-block ml-3 text-fuchsia-700 dark:text-fuchsia-300"/>

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import AboutTeaser from "./aboutTeaser";
+import {Navbar} from "../common/Navbar";
 import Carousel from "./carousel"; 
 import { ThemeToggle } from "../home/ThemeToggle";
 
@@ -20,11 +21,11 @@ export default function AboutMPA() {
   return(
   <div>
     <ThemeToggle />
-    <AboutTeaser
-     isFullPage={true}
-     showButton={false}
-     />
-     
+    <AboutTeaser isFullPage={true} showButton={false}>
+     <Navbar/> 
+    </AboutTeaser>
+    
+    
 
     <div id="about-full" className="min-h-screen bg-gradient-to-br from-white to-fuchsia-300 text-gray-900 dark:bg-none dark:bg-[#21292c] dark:text-gray-100 overflow-x-hidden">
 

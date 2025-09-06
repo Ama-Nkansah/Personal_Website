@@ -34,10 +34,10 @@ function Hero(){
 
       <div className="text-center md:-translate-y-6 md:text-left order-2 -translate-y-9 md:mt-0">
           <h1 className=" text-3xl mb-7 md:mb-0 font-bold text-fuchsia-600 dark:text-fuchsia-300
-            md:text-6xl md:text-center md:-translate-y-100 md:translate-x-75">
+            md:text-5xl md:text-center md:-translate-y-100 md:translate-x-75">
             👋🏾 Ama Nkansah here,
           </h1>
-          <h2 className="text-xl px-2 mb-3 md:mb-0 md:text-2xl md:-translate-y-94 md:translate-x-224">
+          <h2 className="text-base px-2 mb-3 md:mb-0 md:text-2xl md:-translate-y-94 md:translate-x-180">
             Software Engineer & <Title/>
           </h2>
           <p className="text-center text-base italic mt-2 text-gray-700 dark:text-gray-300 md:-translate-y-90 md:translate-x-78">

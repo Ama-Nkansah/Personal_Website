@@ -39,7 +39,7 @@ useEffect(() => {
         <Navbar />
         <Hero />
        <AboutTeaser/>
-       <Footer className='absolute bottom-10' />
+       <Footer styles ='relative left-165' />
     </div>
   );
 };
