@@ -1,7 +1,7 @@
  
 export const Card = () =>{
 return (
-  < div className="w-100 h-auto p-6 rounded-2xl backdrop-blur-md border-black/20 bg-black/20 dark:bg-black/50 border dark:border-white/20 translate-x-140 shadow-md my-10">
+  < div className="w-100 h-auto p-6 rounded-2xl backdrop-blur-md border-black/20 bg-black/20 dark:bg-black/50 border dark:border-white/20 translate-x-110 shadow-md my-5">
       <h1 className="pb-3 flex justify-center items-center text-2xl delius-regular font-extrabold">Always Evolving</h1>
       <hr className=" mb-5 translate-x-15 bg-black border  h-0.5 w-55 rounded-full" />
         <p className="ml-2 delius-regular">

@@ -38,7 +38,7 @@ const Loader = ({ onComplete }) => {
       >
         {progress}%
       </motion.div>
-      <Footer styles="absolute bottom-10 right-160" />
+      <Footer styles="absolute bottom-10 right-130" />
     </div>
   );
 };

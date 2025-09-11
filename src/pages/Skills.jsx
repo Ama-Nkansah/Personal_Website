@@ -9,7 +9,7 @@ export const Skills = () => {
       <ThemeToggle />
       <Navbar />
       <Stack />
-      <Footer styles="absolute -bottom-150 right-165 mb-1"/>
+      <Footer styles="relative left-130 mb-1"/>
     </div>
   );
 }

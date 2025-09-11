@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import AboutTeaser from "./aboutTeaser";
 import {Navbar} from "../common/Navbar";
 import Carousel from "./carousel"; 
-import { ThemeToggle } from "../home/ThemeToggle";
 
 export default function AboutMPA() {
 
@@ -20,9 +19,8 @@ export default function AboutMPA() {
 
   return(
   <div>
-    <ThemeToggle />
     <AboutTeaser isFullPage={true} showButton={false}>
-     <Navbar/> 
+     <Navbar/>
     </AboutTeaser>
     
     

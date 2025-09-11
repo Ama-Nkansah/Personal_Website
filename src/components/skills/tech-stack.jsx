@@ -9,15 +9,15 @@ export const Stack = () => {
       <Navbar />
       
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-5xl font-bold mt-20 translate-x-143 delius-regular ">My Skills & <span className="text-fuchsia-500 dark:text-fuchsia-300">Expertise</span></h1>
-        <p className="text-lg my-10 translate-x-123 leading-relaxed">
+        <h1 className="text-5xl font-bold mt-10 translate-x-110 delius-regular ">My Skills & <span className="text-fuchsia-500 dark:text-fuchsia-300">Expertise</span></h1>
+        <p className="text-lg my-10 translate-x-90 leading-relaxed">
             A comprehensive overview of my technical skills and proficiency levels across 
             <br/><span className="block ml-35">various technologies and frameworks.</span>
             <hr className=" mt-5 translate-x-60 bg-fuchsia-400 border border-fuchsia-400 h-1 w-30 rounded-full" />
           </p>
       </div>
 
-      <div className="flex items-center justify-center gap-5">
+      <div className="grid md:grid-cols-8 items-center justify-center gap-5 ml-10">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md"/>
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20 shadow-md" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" className="w-20 h-20 p-2 rounded-2xl backdrop-blur-md  bg-black/20 border-black/20 dark:bg-white/10 border dark:border-white/20shadow-md" />
