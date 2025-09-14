@@ -25,15 +25,15 @@ body {
   height: 100%;
 }
 .swiper-pagination-bullet-active {
-  background-color: #e36ee1;
+  background-color: #cf5bcd;
 }
 
 .swiper-button-next{
-  color: #e36ee1;
+  color: #cf5bcd;
 }
 
 .swiper-button-prev{
-  color: #e36ee1;
+  color: #cf5bcd;
 }
 
 .swiper-slide {

@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import {Navbar} from "./components/common/Navbar";
 import {Footer} from "./components/common/footer";
+import {Navbar} from "./components/common/Navbar";
+import Contact  from "./pages/Contact";
 import { Skills } from "./pages/Skills";
 import { About } from "./pages/About";
 import { Home } from "./pages/Home";
@@ -57,6 +58,9 @@ function App() {
                 <Skills />
               </section>
 
+              <section id="contact">
+                <Contact />
+              </section>
             </div>
           }
         />
@@ -64,7 +68,9 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/about" element={<About />} />
         <Route path="/experience" element={<Skills />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer styles="relative left-130 mb-1"/>
     </div>
   );
 }

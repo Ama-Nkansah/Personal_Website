@@ -9,7 +9,6 @@ export const Skills = () => {
       <Navbar />
       <Stack />
       <Projects />
-      <Footer styles="relative left-130 mb-1"/>
     </div>
   );
 }
