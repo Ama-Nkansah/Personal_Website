@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 import { ThemeToggle } from "../components/home/ThemeToggle";
 import { Navbar } from "../components/common/Navbar";
 import { Hero } from "../components/home/Hero"; 
-import Loader from "../components/home/loader";
-import { Footer } from '../components/common/footer';
-import AboutTeaser from '../components/about/aboutTeaser';    
+import Loader from "../components/home/loader";   
 
 export const Home = () => {
 
@@ -34,12 +32,10 @@ useEffect(() => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-fuchsia-300 text-gray-900 dark:bg-none dark:bg-[#21292c] dark:text-gray-100 overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-white to-fuchsia-300 text-gray-900 dark:bg-none dark:bg-[#21292c] dark:text-gray-100 overflow-x-hidden" id="home">
         <ThemeToggle/>
         <Navbar />
         <Hero />
-       <AboutTeaser/>
-       <Footer styles ='relative left-145' />
     </div>
   );
 };
