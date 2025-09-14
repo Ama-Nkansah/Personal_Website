@@ -12,7 +12,7 @@ function Hero(){
     <div>
       <Logo/>
       <MenuIcon/>
-      <div className="h-screen md:block flex flex-col">
+      <div className="h-auto md:block flex flex-col">
         <div className="md:-translate-y-10 mb-19 flex order-1 md:block justify-center">
           {/* Outer Circle */}
           <motion.div className=" w-54 aspect-square bg-fuchsia-300 dark:bg-fuchsia-200 rounded-full z-30
@@ -34,7 +34,7 @@ function Hero(){
 
       <div className="text-center md:-translate-y-6 md:text-left order-2 -translate-y-9 md:mt-0">
           <h1 className=" text-3xl mb-7 md:mb-0 font-bold text-fuchsia-600 dark:text-fuchsia-300
-            md:text-5xl md:text-center md:-translate-y-100 md:translate-x-75">
+            md:text-5xl text-center md:-translate-y-100 md:translate-x-70">
             👋🏾 Ama Nkansah here,
           </h1>
           <h2 className="text-base px-2 mb-3 md:mb-0 md:text-2xl md:-translate-y-94 md:translate-x-180">
