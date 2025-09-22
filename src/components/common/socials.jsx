@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter }  from "lucide-react"; 
+import { Github, Linkedin, Twitter,Youtube }  from "lucide-react"; 
 
 export function SocialIcons(){
 return(
@@ -23,6 +23,13 @@ return(
     rel="noopener noreferrer"
   >
     <Twitter className="w-6 h-6 text-black dark:text-white hover:text-fuchsia-600 dark:hover:text-fuchsia-300 transition -translate-y-54 translate-x-80" />
+  </a>
+  < a
+    href="https://www.youtube.com/@techbants"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Youtube className="w-6 h-6 text-black dark:text-white hover:text-fuchsia-600 dark:hover:text-fuchsia-300 transition -translate-y-54 translate-x-80" />
   </a>
 </div>
 )};

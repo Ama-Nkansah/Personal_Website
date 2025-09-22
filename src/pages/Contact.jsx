@@ -8,7 +8,6 @@ export default function Contact() {
       className="py-20 px-6 md:px-16 bg-gray-50 dark:bg-[#2b3336]"
     >
       <div className="max-w-4xl mx-auto text-center">
-        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +24,6 @@ export default function Contact() {
 
         {/* Contact Cards */}
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Email */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center bg-[#dfe9ec] dark:bg-[#353c3e] p-6 rounded-2xl shadow-md"
@@ -40,7 +38,6 @@ export default function Contact() {
             </a>
           </motion.div>
 
-          {/* LinkedIn */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center bg-[#dfe9ec] dark:bg-[#353c3e] p-6 rounded-2xl shadow-md"
@@ -57,7 +54,6 @@ export default function Contact() {
             </a>
           </motion.div>
 
-          {/* Location */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center bg-[#dfe9ec] dark:bg-[#353c3e] p-6 rounded-2xl shadow-md"
@@ -68,27 +64,28 @@ export default function Contact() {
           </motion.div>
         </div>
 
-        {/* Contact Form */}
         <motion.form
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
+          action="/contact"
+          method="POST"
           className="mt-16 grid gap-6 max-w-2xl mx-auto"
         >
           <input
             type="text"
             placeholder="Your Name"
-            className="placeholder-gray-900  p-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-[#dfe9ec] dark:bg-[#353c3e] dark:text-white focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+            className="placeholder-gray-900 dark:placeholder-gray-100 p-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-[#dfe9ec] dark:bg-[#353c3e] dark:text-white focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
           />
           <input
             type="email"
             placeholder="Your Email"
-            className="placeholder-gray-900  p-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-[#dfe9ec] dark:bg-[#353c3e] dark:text-white focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+            className="placeholder-gray-900 dark:placeholder-gray-100 p-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-[#dfe9ec] dark:bg-[#353c3e] dark:text-white focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
           />
           <textarea
             rows="5"
             placeholder="Your Message"
-            className="placeholder-gray-900 p-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-[#dfe9ec] dark:bg-[#353c3e] dark:text-white focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+            className="placeholder-gray-900 dark:placeholder-gray-100 p-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-[#dfe9ec] dark:bg-[#353c3e] dark:text-white focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
           ></textarea>
           <button
             type="submit"
