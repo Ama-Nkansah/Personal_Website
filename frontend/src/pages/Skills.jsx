@@ -1,5 +1,5 @@
 import {Stack} from "../components/skills/tech-stack";
-import {Navbar} from "../components/common/Navbar";
+import {Navbar} from "../components/common/menu";
 import { Footer } from "../components/common/footer";
 import { Projects } from "../components/skills/projects"; 
 

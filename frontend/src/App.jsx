@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import {Footer} from "./components/common/footer";
-import {Navbar} from "./components/common/Navbar";
 import Contact  from "./pages/Contact";
 import { Skills } from "./pages/Skills";
 import { About } from "./pages/About";
@@ -11,35 +10,33 @@ import Loader from "./components/home/loader";
 
 
 function App() {
-    const [loadingDone, setLoadingDone] = useState(false);
-    const [shouldShowLoader, setShouldShowLoader] = useState(false);
+  //   const [loadingDone, setLoadingDone] = useState(false);
+  //   const [shouldShowLoader, setShouldShowLoader] = useState(false);
   
-  useEffect(() => {
-    const browserNavType =
-        performance.getEntriesByType("navigation")[0]?.type;
-        console.log("Browser Navigation Type:", browserNavType);
+  // useEffect(() => {
+  //   const browserNavType =
+  //       performance.getEntriesByType("navigation")[0]?.type;
+  //       console.log("Browser Navigation Type:", browserNavType);
   
   
-    const isFreshVisit =
-    browserNavType === "navigate" ||
-    browserNavType === "reload";
+  //   const isFreshVisit =
+  //   browserNavType === "navigate" ||
+  //   browserNavType === "reload";
   
-    if (isFreshVisit) {
-      setShouldShowLoader(true);
-    } else {
-      setLoadingDone(true);
-    }
-  }, []); 
+  //   if (isFreshVisit) {
+  //     setShouldShowLoader(true);
+  //   } else {
+  //     setLoadingDone(true);
+  //   }
+  // }, []); 
    
   
-    if (!loadingDone && shouldShowLoader) {
-      return <Loader onComplete={() => setLoadingDone(true)} />;
-    }
+  //   // if (!loadingDone && shouldShowLoader) {
+    //   return <Loader onComplete={() => setLoadingDone(true)} />;
+    // }
 
   return (
     <div>
-      <Navbar />
-
       <Routes>
         {/* Each route renders the same App layout but scrolls to section */}
         <Route

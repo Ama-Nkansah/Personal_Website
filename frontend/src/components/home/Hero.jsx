@@ -4,16 +4,13 @@ import  Title from "../home/TypewriterTitle";
 import {SocialIcons} from "../common/socials"; 
 import Button from "../common/button"; 
 import {Logo} from "../common/my-logo";
-import {MenuIcon} from "../common/menu";
 
 
 function Hero(){
   return (
     <div>
       <Logo/>
-      <MenuIcon/>
-      <div className="h-auto md:block flex flex-col">
-        <div className="md:-translate-y-10 mb-19 flex order-1 md:block justify-center">
+        <div className="md:-translate-y-15 mb-19 flex order-1 md:block justify-center">
           {/* Outer Circle */}
           <motion.div className=" w-54 aspect-square bg-fuchsia-300 dark:bg-fuchsia-200 rounded-full z-30
               md:w-[34%] md:translate-y-15 md:translate-x-25"
@@ -40,7 +37,7 @@ function Hero(){
           <h2 className="text-base px-2 mb-3 md:mb-0 md:text-2xl md:-translate-y-94 md:translate-x-180">
             Software Engineer & <Title/>
           </h2>
-          <p className="text-center text-base italic mt-2 text-gray-700 dark:text-gray-300 md:-translate-y-90 md:translate-x-78">
+          <p className="text-center text-sm md:text-base italic mt-2 text-gray-700 dark:text-gray-300 md:-translate-y-90 md:translate-x-78">
             “I build what I dream, and I debug until it works.” – Ama Nkansah
           </p>
       </div>
@@ -48,7 +45,7 @@ function Hero(){
       <Button />
       <SocialIcons/>
   </div>
-</div>
+
   )
 }
 
