@@ -10,7 +10,7 @@ export const ThemeToggle = () => {
       <button 
         onClick={toggleTheme} 
         className={cn(
-          "sticky top-5 -translate-y-2 translate-x-85 md:translate-y-0 md:translate-x-300 right-4 p-2 mt-6 rounded-full transition-colors duration-300 bg-gray-500",
+          "sticky top-5 md:translate-x-300 right-4 p-2 md:mt-6 rounded-full transition-colors duration-300 bg-gray-500",
           "focus:outline-1 z-50 dark:outline-fuchsia-200"
         )}
       >

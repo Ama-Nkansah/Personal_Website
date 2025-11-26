@@ -27,7 +27,7 @@ const [isOpen, setIsOpen] = useState(false);
     </div>
    
    
-     <div className="absolute m-2 left-92 top-2 md:hidden z-90">
+     <div className="md:hidden z-90">
       <button
        onClick={() => setIsOpen(!isOpen)} 
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Logo = () => { 
   return (
-<div className="container -translate-y-8 flex items-center px-4 gap-2">
+<div className="md:-translate-y-8 md:flex md:items-center Md:px-4 gap-2">
       <Link to="/" className="flex items-center gap-1 dark:text-fuchsia-200">
         <span>
           <span className="md:text-2xl text-glow text-foreground stroke-black text-shadow-lg/20 text-shadow-fuchsia-400 dark:text-shadow-none" style={{ fontFamily: "Rubik Bubbles, system-ui", fontStyle:"normal" }}>
