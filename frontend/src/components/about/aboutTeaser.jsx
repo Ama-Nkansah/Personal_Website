@@ -1,4 +1,5 @@
-import {MoveRight} from "lucide-react";import {Navbar} from "../common/Navbar";
+import {MoveRight} from "lucide-react";
+import {Navbar} from "../common/menu";
 import myImg from "../../assets/my-img.jpg";
 import { useNavigate } from 'react-router-dom';
 
@@ -13,10 +14,10 @@ export default function AboutTeaser({showButton = true }) {
   return (
     <div className="h-full justify-center bg-white dark:bg-[#2b3336] text-gray-900 dark:text-gray-100 p-2 pt-14">
       
-      <h1 className= {`w-1/2 md:translate-x-50 sm:translate-x-30 text-3xl font-bold text-shadow-lg/20 text-shadow-fuchsia-400`}>About Me</h1>
+      <h1 className= {`w-full flex justify-center text-3xl font-bold text-shadow-lg/20 text-shadow-fuchsia-400`}>About Me</h1>
 
-      <div className= {`grid sm:grid-cols-2 sm:grid-rows-2 mt-5 gap-1 h pb-380 sm:pb-0 border border-fuchsia-300`}>
-        <p className="order-1 sm:order-0 sm:col-start-1 p-8 -translate-y-9 md:-translate-y-0 md:p-10 md:py-15 text-base delius-regular">
+      <div className= {`grid sm:grid-cols-2 sm:grid-rows-2 mt-5 gap-1 sm:pb-0 border border-fuchsia-300`}>
+        <p className="order-1 sm:order-0 sm:col-start-1 p-8 py-15 -translate-y-9 md:-translate-y-0 md:p-10 md:py-15 text-base delius-regular">
           I build smart, functional products out of raw ideas whether you’re a founder with a plan or just figuring it out. 
           Behind the code, I’m all about systems thinking, clean architecture, and building things that can actually grow.
           <br />
@@ -27,7 +28,7 @@ export default function AboutTeaser({showButton = true }) {
         </p>
         <img src= {myImg} className="order-2 sm:order-0 sm:col-start-2 h-[100%] w-[55%] sm:h-[70%] sm:w-[40%] rounded-full aspect-square -translate-y-8 translate-20 md:translate-y-14 md:translate-x-50"/>
 
-          <h1 className="order-3 sm:order-0 sm:px-60 sm:py-30 md:col-start-1 text-3xl font-bold text-shadow-lg/20 translate-5 md:-translate-x-15 sm:translate-x-0 sm:translate-0 text-shadow-fuchsia-400">My Approach</h1>
+          <h1 className="order-3 sm:order-0 sm:px-60 sm:py-30 md:col-start-1 text-3xl font-bold text-shadow-lg/20 flex justify-center text-shadow-fuchsia-400">My Approach</h1>
           <p className=" order-4 sm:order-0  md:col-start-2 py-15 px-10 text-base delius-regular ">
           I like to keep things simple, fast, and effective. I believe in testing ideas early, building smart MVPs, and improving as we go. Every project I touch is built with clarity, structure, and growth in mind.
           I work full-stack using tools like React, Tailwind, Node.js, Express, and databases. I also integrate AI and cloud tools to make things even smarter.
