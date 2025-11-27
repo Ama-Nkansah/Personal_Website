@@ -15,9 +15,9 @@ function Hero(){
          <Logo/>
          <ThemeToggle/>
       </div>
-        <div className="md:col-start-1 md:col-end-2 ml-22 mb-6">
+        <div className="md:col-start-1 md:col-end-2 ml-22 md:mb-6 my-13">
           {/* Outer Circle */}
-          <motion.div className=" w-54 aspect-square bg-fuchsia-300 dark:bg-fuchsia-200 rounded-full z-30
+          <motion.div className=" w-60 aspect-square bg-fuchsia-300 dark:bg-fuchsia-200 rounded-full z-30
               md:w-[34%] md:translate-y-15 md:translate-x-25"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -28,7 +28,7 @@ function Hero(){
             initial={{ scale: 0.6, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}>
-              <img src={myImage} alt="my-picture" className="w-49 aspect-square mt-2 rounded-full mx-auto
+              <img src={myImage} alt="my-picture" className="w-55 aspect-square mt-2 rounded-full mx-auto
                   md:w-[92%] translate-y-2 md:translate-y-5 md:translate-x-1"/>
             </motion.div>
           </motion.div>
@@ -42,12 +42,12 @@ function Hero(){
           <h2 className="text-base px-2 mb-3 md:text-2xl">
             Software Engineer & <Title/>
           </h2>
-          <p className="text-center text-sm md:text-base italic mt-2 text-gray-700 dark:text-gray-300 ">
+          <p className="text-center text-sm md:text-base italic mt-6 text-gray-700 dark:text-gray-300 ">
             “I build what I dream, and I debug until it works.” – Ama Nkansah
           </p>
       </div>
 
-          <div className="flex flex-col pt-5 md:gap-4 md:ml-180 md:mb-120 justify-center items-center pb-6">
+          <div className="flex flex-col pt-8 md:gap-4 md:ml-180 md:mb-120 justify-center items-center p-12">
             <Button />
             <SocialIcons/>
           </div>

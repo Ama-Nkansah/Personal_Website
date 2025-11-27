@@ -18,7 +18,7 @@ export default function AboutMPA() {
 
   return(
   <div>
-     <Navbar/>
+     {/* <Navbar/> */}
     <div id="about-full" className="min-h-screen bg-gradient-to-br from-white to-fuchsia-300 text-gray-900 dark:bg-none dark:bg-[#21292c] dark:text-gray-100 overflow-x-hidden">
 
       <h1 className="text-2xl md:text-4xl font-bold text-center mt-25 -translate-y-14 text-shadow-lg/20 text-shadow-fuchsia-400  ">Pieces of My Journey</h1>

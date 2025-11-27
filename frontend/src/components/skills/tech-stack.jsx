@@ -1,4 +1,3 @@
-import {Navbar} from "../common/menu";
 import { Expertise } from "./expertise";  
 import {Card} from "../common/card";
 
@@ -6,7 +5,6 @@ import {Card} from "../common/card";
 export const Stack = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-fuchsia-300 text-gray-900 dark:bg-none dark:bg-[#21292c] dark:text-gray-100 overflow-x-hidden">
-      <Navbar />
       
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-5xl font-bold mt-10 translate-x-120 delius-regular ">My Skills & <span className="text-fuchsia-500 dark:text-fuchsia-300">Projects</span></h1>

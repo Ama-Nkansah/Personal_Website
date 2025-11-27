@@ -1,5 +1,4 @@
 import {MoveRight} from "lucide-react";
-import {Navbar} from "../common/menu";
 import myImg from "../../assets/my-img.jpg";
 import { useNavigate } from 'react-router-dom';
 
@@ -26,7 +25,11 @@ export default function AboutTeaser({showButton = true }) {
           I needed more — more creativity, more problem-solving, more impact. That “aha!” moment came in Level 200, when I transitioned fully into software engineering.
           Since then, I’ve been obsessed with turning ideas into code that solves real problems and scales with purpose.
         </p>
-        <img src= {myImg} className="order-2 sm:order-0 sm:col-start-2 h-[100%] w-[55%] sm:h-[70%] sm:w-[40%] rounded-full aspect-square -translate-y-8 translate-20 md:translate-y-14 md:translate-x-50"/>
+        <img 
+          src= {myImg}
+          loading="lazy" 
+          className="order-2 sm:order-0 sm:col-start-2 h-[100%] w-[55%] sm:h-[70%] sm:w-[40%] rounded-full aspect-square -translate-y-8 translate-20 md:translate-y-14 md:translate-x-50"
+        />
 
           <h1 className="order-3 sm:order-0 sm:px-60 sm:py-30 md:col-start-1 text-3xl font-bold text-shadow-lg/20 flex justify-center text-shadow-fuchsia-400">My Approach</h1>
           <p className=" order-4 sm:order-0  md:col-start-2 py-15 px-10 text-base delius-regular ">

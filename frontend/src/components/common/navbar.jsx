@@ -5,11 +5,11 @@ import { Logo } from "./my-logo.jsx";
 
 const FullNavbar = ()=>{
   return(
-    <div className="md:hidden flex  flex-row justify-between">
-      <Logo/>
-      <ThemeToggle/>
-      <Navbar/>
-    </div>
+    <section className="pt-4 pb-8 mx-4 md:hidden flex flex-row justify-between">
+        <Logo/>
+        <ThemeToggle/>
+        <Navbar/>
+    </section>
   );
 }
 
