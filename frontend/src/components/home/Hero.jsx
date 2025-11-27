@@ -15,7 +15,7 @@ function Hero(){
          <Logo/>
          <ThemeToggle/>
       </div>
-        <div className="md:col-start-1 md:col-end-2 ml-22 md:mb-6 my-13">
+        <div className=" flex justify-center items-center md:col-start-1 md:col-end-2 md:mb-6 mb-3">
           {/* Outer Circle */}
           <motion.div className=" w-60 aspect-square bg-fuchsia-300 dark:bg-fuchsia-200 rounded-full z-30
               md:w-[34%] md:translate-y-15 md:translate-x-25"
@@ -29,7 +29,7 @@ function Hero(){
               animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}>
               <img src={myImage} alt="my-picture" className="w-55 aspect-square mt-2 rounded-full mx-auto
-                  md:w-[92%] translate-y-2 md:translate-y-5 md:translate-x-1"/>
+                  md:w-[92%] md:translate-y-5 md:translate-x-1"/>
             </motion.div>
           </motion.div>
      </div>
