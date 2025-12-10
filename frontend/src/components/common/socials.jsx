@@ -18,7 +18,7 @@ return(
     <Linkedin className="w-5 h-5 md:w-6 md:h-6  text-black dark:text-white hover:text-fuchsia-600 dark:hover:text-fuchsia-300  transition" />
   </a>
  < a
-    href="https://twitter.com/AmaNkansah"
+    href="https://x.com/ama_techgirl"
     target="_blank"
     rel="noopener noreferrer"
   >

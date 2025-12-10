@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const GithubCTA = () => {
   return (
-    <section className="relative w-full py-20 bg-gray-900 dark:bg-black overflow-hidden flex items-center justify-center">
+    <section className="md:mt-20 relative w-full py-20 bg-gray-900 dark:bg-black overflow-hidden flex items-center justify-center">
       
       {/* --- Background Pattern (Abstract Code/Grid) --- */}
       <div className="absolute inset-0 opacity-10">
@@ -44,7 +44,7 @@ export const GithubCTA = () => {
             className="flex-shrink-0"
           >
             <a 
-              href="https://github.com/YOUR_USERNAME" // REPLACE WITH YOUR LINK
+              href="https://github.com/Ama-Nkansah" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full bg-white px-8 font-medium text-black transition-all duration-300 hover:bg-fuchsia-50 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(232,121,249,0.5)] focus:outline-none focus:ring-2 focus:ring-fuchsia-400 focus:ring-offset-2 focus:ring-offset-gray-900"

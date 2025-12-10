@@ -1,9 +1,9 @@
 export const Expertise = () => {
   const skills = [
     { name: "Frontend Development", percent: 90, color: "bg-fuchsia-500" },
-    { name: "React & Ecosystem", percent: 85, color: "bg-blue-500" },
-    { name: "Backend (Node/Express)", percent: 70, color: "bg-green-500" },
-    { name: "UI/UX Design", percent: 75, color: "bg-purple-500" },
+    { name: "Version Control", percent: 85, color: "bg-blue-500" },
+    { name: "Backend", percent: 50, color: "bg-green-500" },
+    { name: "RESTful API's", percent: 75, color: "bg-purple-500" },
   ];
 
   return (

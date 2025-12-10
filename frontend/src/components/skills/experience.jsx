@@ -1,26 +1,27 @@
 import { Briefcase } from "lucide-react";
 
 export const Experience = () => {
-  const jobs = [
-    {
-      role: "Frontend Engineer Intern",
-      company: "Tech Innovators Ltd",
-      duration: "2024 - Present",
-      desc: "Developing responsive UI components using React and Tailwind. Improved site performance by 25% through image optimization."
-    },
-    {
-      role: "Web Development Lead",
-      company: "University CS Club",
-      duration: "2023 - 2024",
-      desc: "Mentored 30+ students in HTML/CSS/JS. Led the redesign of the club's portal using Next.js."
-    },
-    {
-      role: "Freelance Developer",
-      company: "Self-Employed",
-      duration: "2022 - 2023",
-      desc: "Delivered 5+ custom websites for local businesses. Managed deployment and SEO optimization."
-    }
-  ];
+  const jobs =[
+  {
+    role: "Frontend Engineer Lead",
+    company: "InnovaLink Solutions",
+    duration: "2025 - Present",
+    desc: "Leading the frontend team in building a client collaboration platform, creating scalable UI systems and smooth, user-focused experiences during my internship."
+  },
+  {
+    role: "Frontend Developer",
+    company: "CodeHive",
+    duration: "2025 - Present",
+    desc: "Developing responsive and scalable frontend websites while contributing to growing team projects and improving my engineering skills."
+  },
+  {
+    role: "Frontend Developer (Contract)",
+    company: "Kantatech Company",
+    duration: "August 2025 - November 2025",
+    desc: "Built a web application for agribusiness operations, focusing on clean interface design and efficient user workflows."
+  }
+];
+
 
   return (
     <div>

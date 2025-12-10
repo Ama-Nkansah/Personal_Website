@@ -55,14 +55,14 @@ export const Stack = () => {
         </div>
 
         {/* --- "Always Evolving" Banner --- */}
-        <div className="mt-24 relative overflow-hidden rounded-3xl bg-gray-900 dark:bg-fuchsia-950 text-white p-10 md:p-16 text-center shadow-2xl">
+        <div className="mt-24 relative overflow-hidden rounded-3xl bg-gray-800 text-white p-10 md:p-16 text-center shadow-2xl">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
           <div className="relative z-10">
             <Cpu className="mx-auto text-fuchsia-400 mb-6 w-12 h-12" />
             <h2 className="text-3xl font-bold mb-4">Always Evolving</h2>
             <p className="max-w-2xl mx-auto text-gray-300 text-lg leading-relaxed">
-              I'm currently diving deep into <span className="text-fuchsia-300 font-semibold">AI Models</span> and <span className="text-fuchsia-300 font-semibold">Advanced Animations</span>. 
-              My goal is to bridge the gap between complex backend logic and beautiful, fluid frontend experiences.
+              I'm currently diving deep into <span className="text-fuchsia-300 font-semibold">System Design</span> and <span className="text-fuchsia-300 font-semibold">Performance Optimization</span>. 
+              I'm focused on building interfaces that are not just beautiful, but scalable, efficient, and truly intuitive.
             </p>
           </div>
         </div>

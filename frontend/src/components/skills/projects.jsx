@@ -11,16 +11,16 @@ export const Projects = () => {
 
     },
     {
-      title: "Colink",
-      desc: "A responsive admin dashboard featuring real-time data visualization, order management, and dark mode support.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-      liveLink: "#",
-    },
-    {
       title: "My Website",
       desc: "My previous personal site showing my progression in UI/UX design. Features custom CSS animations and form handling.",
       image: "/assets/portfolio.png",
       liveLink: "https://ama-nkansahdev.vercel.app",
+    },
+    {
+      title: "Colink",
+      desc: "A responsive admin dashboard featuring real-time data visualization, order management, and dark mode support.",
+      image: "/assets/colink.png",
+      liveLink: "#",
     }
   ];
 
@@ -43,7 +43,7 @@ export const Projects = () => {
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                  {/* Overlay Buttons */}
-                 <a href={project.liveLink} className="p-2 bg-fuchsia-600 rounded-full text-white hover:bg-fuchsia-700"><ExternalLink size={20}/></a>
+                 <a href={project.liveLink}target="_blank" rel="noopener noreferrer" className="p-2 bg-fuchsia-600 rounded-full text-white hover:bg-fuchsia-700"><ExternalLink size={20}/></a>
               </div>
             </div>
 
@@ -55,7 +55,7 @@ export const Projects = () => {
               </p>
               
               <div className="flex gap-4 mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
-                <a href={project.liveLink} className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 hover:text-fuchsia-600">
+                <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 hover:text-fuchsia-600">
                   <ExternalLink size={14} /> Live Demo
                 </a>
               </div>
