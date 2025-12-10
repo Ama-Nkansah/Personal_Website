@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import '../../index.css';
 
@@ -26,7 +27,7 @@ export const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="nav-link hover:text-fuchsia-200 transition-colors duration-100 dark:hover:text-fuchsia-900 text-shadow-lg/20 text-shadow-fuchsia-200 dark:text-shadow-none"
+              className="nav-link hover:text-fuchsia-700 md:text-base transition-colors duration-100 dark:hover:text-fuchsia-900 text-shadow-lg/20 text-shadow-fuchsia-200 text-fuchsia-950 dark:text-shadow-none"
             >
               {link.name}
             </a>
@@ -34,32 +35,47 @@ export const Navbar = () => {
         </nav>
       </div>
 
-      {/* ✅ THE IMPORTANT PART: z-60 ensures this stays above menu overlay */}
-      <div className="mt-2 md:hidden z-60 relative">
-        <button onClick={() => setIsOpen(!isOpen)}>
+      <div className="fixed top-5 md:hidden z-[60]">
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="p-2"
+        >
           {isOpen ? (
-            <X size={24} className="text-gray-900 dark:text-gray-100" />
+            <X size={30} className="text-gray-900 dark:text-gray-100" />
           ) : (
-            <Menu size={24} className="text-gray-900 dark:text-gray-100" />
+            <Menu size={30} className="text-gray-900 dark:text-gray-100" />
           )}
         </button>
       </div>
 
-      {/* Overlay menu keeps original stacking */}
-      {isOpen && (
-        <div className="absolute top-0.5 right-0.5 w-screen bg-fuchsia-50 h-full dark:bg-[#21292c] flex flex-col items-center gap-5 py-20 shadow-lg md:hidden z-50">
-          {navlinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-xl font-bold"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </a>
-          ))}
-        </div>
-      )}
+      {/* --- Mobile Full Screen Overlay --- */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }} // Slide from right
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="fixed inset-0 z-50 flex flex-col justify-center items-center bg-fuchsia-200 dark:bg-gray-950/95 backdrop-blur-xl md:hidden"
+          >
+            <div className="flex flex-col gap-8 text-center">
+              {navlinks.map((link, index) => (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 * index, duration: 0.3 }}
+                  className="text-3xl font-bold text-gray-800 dark:text-gray-100 hover:text-fuchsia-600 dark:hover:text-fuchsia-400 transition-colors"
+                >
+                  {link.name}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

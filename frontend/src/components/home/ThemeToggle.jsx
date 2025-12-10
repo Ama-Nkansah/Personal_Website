@@ -6,20 +6,21 @@ export const ThemeToggle = () => {
   const { isDarkMode, toggleTheme } = useTheme();
 
   return (
-    <div> 
-      <button 
-        onClick={toggleTheme} 
-        className={cn(
-          "sticky top-5 md:translate-x-300 right-4 p-2 md:mt-6 rounded-full transition-colors duration-300 bg-fuchsia-300",
-          "focus:outline-1 z-50 dark:outline-fuchsia-200"
-        )}
-      >
-        {isDarkMode ? (
-          <Moon className="h-2 w-2 md:h-5 md:w-5 text-black"/> 
-        ) : (
-          <Sun className="h-2 w-2 md:h-5 md:w-5 text-black"/>
-        )}
-      </button>
-    </div>
+    <button
+      onClick={toggleTheme}
+      className={cn(
+        "fixed top-6 right-6 z-50 p-2 rounded-full transition-all duration-300 shadow-lg",
+        "bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-gray-200 dark:border-gray-700",
+        "hover:bg-fuchsia-100 dark:hover:bg-fuchsia-900 hover:scale-110",
+        "focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+      )}
+      aria-label="Toggle Theme"
+    >
+      {isDarkMode ? (
+        <Moon className="w-4 h-4 text-fuchsia-300" />
+      ) : (
+        <Sun className="w-4 h-4 text-fuchsia-600" />
+      )}
+    </button>
   );
 };

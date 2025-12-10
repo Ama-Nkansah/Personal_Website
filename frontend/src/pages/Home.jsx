@@ -1,14 +1,25 @@
+import { Navbar } from "../components/common/menu";
+import { Hero } from "../components/home/Hero";
 import { ThemeToggle } from "../components/home/ThemeToggle";
-import { Hero } from "../components/home/Hero";   
-import FullNavbar from "../components/common/navbar";
+import { Footer } from "../components/common/footer";
+import { motion } from "framer-motion";
 
-export const Home = () => {
-
+export default function Home() {
   return (
-    <div className="h-screen bg-gradient-to-br from-white to-fuchsia-300 text-gray-900 dark:bg-none dark:bg-[#21292c] dark:text-gray-100 " id="home">
-      <FullNavbar />
-      <Hero />
+    <div className="relative min-h-screen bg-fuchsia-200/80 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden">
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="relative"
+      >
+        {/* Fixed Elements */}
+        <Navbar />
+        <ThemeToggle />
+
+        {/* Main Content */}
+        <Hero />
+      </motion.main>
     </div>
   );
-};
- 
+}

@@ -1,60 +1,89 @@
 import { motion } from "framer-motion";
 import myImage from "../../assets/cartoonify.jpg";
-import  Title from "../home/TypewriterTitle";
-import {SocialIcons} from "../common/socials"; 
-import Button from "../common/button"; 
-import {Logo} from "../common/my-logo";
-import { ThemeToggle } from "../home/ThemeToggle";
+import Title from "../home/TypewriterTitle";
+import { SocialIcons } from "../common/socials";
+import Button from "../common/button";
 
-
-function Hero(){
+function Hero() {
   return (
-    <section>
-    <div className="md:grid md:grid-cols-2 justify-center">
-      <div className="hidden md:flex">
-         <Logo/>
-         <ThemeToggle/>
-      </div>
-        <div className=" flex justify-center items-center md:col-start-1 md:col-end-2 md:mb-6 mb-3">
-          {/* Outer Circle */}
-          <motion.div className=" w-60 aspect-square bg-fuchsia-300 dark:bg-fuchsia-200 rounded-full z-30
-              md:w-[34%] md:translate-y-15 md:translate-x-25"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}>
-                
-              {/* My Image */}
-            <motion.div
-            initial={{ scale: 0.6, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}>
-              <img src={myImage} alt="my-picture" className="w-55 aspect-square mt-2 rounded-full mx-auto
-                  md:w-[92%] md:translate-y-5 md:translate-x-1"/>
-            </motion.div>
+    <section className="min-h-screen flex items-center justify-center px-6 py-5 md:mt-9 md:px-12 lg:px-20">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 items-center">
+        
+
+        
+        {/* --- Image Content (Right on Desktop, Bottom on Mobile) --- */}
+       <div className="flex justify-center items-center order-1 lg:order-1 relative">
+          <motion.div
+            className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {/* Background Blob/Circle */}
+            <motion.div 
+              className="absolute inset-0 bg-fuchsia-300/50 dark:bg-fuchsia-900/40 rounded-full blur-2xl"
+              animate={{ 
+                scale: [1, 1.1, 1],
+                rotate: [0, 5, -5, 0]
+              }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            />
+            
+            {/* Solid Circle Container */}
+            <div className="relative w-full h-full rounded-full border-4 border-fuchsia-100 dark:border-fuchsia-900/30 overflow-hidden shadow-2xl bg-fuchsia-200 dark:bg-fuchsia-950">
+              <motion.img
+                src={myImage}
+                alt="Ama Nkansah"
+                className=" object-cover"
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1.2 }}
+              />
+            </div>
           </motion.div>
-     </div>
+        </div> 
 
-      <div className="text-center md:text-left col-start-2 col-end-3 md:mt-0">
-          <h1 className=" text-3xl mb-3 font-bold text-fuchsia-600 dark:text-fuchsia-300
-            md:text-5xl text-center">
-            👋🏾 Ama Nkansah here,
-          </h1>
-          <h2 className="text-base px-2 mb-3 md:text-2xl">
-            Software Engineer & <Title/>
-          </h2>
-          <p className="text-center text-sm md:text-base italic mt-6 text-gray-700 dark:text-gray-300 ">
-            “I build what I dream, and I debug until it works.” – Ama Nkansah
-          </p>
+
+        {/* --- Text Content (Left on Desktop, Top on Mobile) --- */}
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-2xl md:text-6xl font-extrabold tracking-tight mb-4">
+              <span className="block text-xl md:text-2xl font-medium text-gray-500 dark:text-gray-400 mb-2">
+                👋🏾 Hello,
+              </span>
+              Ama Nkansah <span className="text-fuchsia-600 dark:text-fuchsia-400">here.</span>
+            </h1>
+
+            <h2 className="text-base md:text-2xl font-semibold flex flex-col md:flex-row gap-2 items-center lg:items-start justify-center lg:justify-start mb-4 text-gray-700 dark:text-gray-200">
+              <span>Software Engineer &</span>
+              <span className="text-fuchsia-500 dark:text-fuchsia-300">
+                <Title />
+              </span>
+            </h2>
+
+            <p className="max-w-md text-base md:text-lg italic text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+              “I build what I dream, and I debug until it works.”
+            </p>
+
+            {/* CTA Section */}
+            <div className="flex flex-col md:-mx-10 md:gap-3 w-full items-center justify-center">
+              <div className="transform hover:scale-105 transition-transform duration-300">
+                <Button /> {/* Ensure your Button component handles its own sizing */}
+              </div>
+              <div className="flex gap-4">
+                <SocialIcons />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
       </div>
-
-          <div className="flex flex-col pt-8 md:gap-4 md:ml-180 md:mb-120 justify-center items-center p-12">
-            <Button />
-            <SocialIcons/>
-          </div>
-  </div>
-  </section>
-
-  )
+    </section>
+  );
 }
 
-export {Hero}; 
+export { Hero };

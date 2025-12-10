@@ -3,7 +3,7 @@ import {Footer} from "./components/common/footer";
 import Contact  from "./pages/Contact";
 import { Skills } from "./pages/Skills";
 import { About } from "./pages/About";
-import { Home } from "./pages/Home";
+import Home from "./pages/Home";
 import {NotFound} from "./pages/NotFound";
 import { useEffect, useState } from "react";
 import Loader from "./components/home/loader";
@@ -47,7 +47,7 @@ function App() {
                 <Home />
               </section>
 
-              <section id="about">
+              {/* <section id="about">
                 <About />
               </section>
 
@@ -57,7 +57,7 @@ function App() {
 
               <section id="contact">
                 <Contact />
-              </section>
+              </section> */}
             </div>
           }
         />
@@ -67,7 +67,9 @@ function App() {
         <Route path="/experience" element={<Skills />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer styles="relative left-130 mb-1"/>
+      <div className="py-2 text-center text-sm dark:bg-fuchsia-900/30">
+          <Footer />
+        </div>
     </div>
   );
 }
