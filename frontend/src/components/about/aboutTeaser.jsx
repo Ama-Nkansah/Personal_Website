@@ -1,5 +1,5 @@
 import { ArrowRight, Code, Heart, Lightbulb } from "lucide-react"; // Make sure you have lucide-react or use text
-import myImg from "../../assets/my-img.jpg";
+import myImg from "../../../public/assets/my-img.jpg";
 import { useNavigate } from 'react-router-dom';
 import { ApproachCard } from "./approachCard";
 import Button from "../common/button"; // Assuming you have this

@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import {Footer} from "./components/common/footer";
 import Contact  from "./pages/Contact";
-import { Skills } from "./pages/Skills";
+import {Stack} from "./pages/Skills";
 import { About } from "./pages/About";
 import Home from "./pages/Home";
 import {NotFound} from "./pages/NotFound";
@@ -29,7 +29,7 @@ function App() {
         {/* Optional: if someone visits /experience directly */}
         <Route path="*" element={<NotFound />} />
         <Route path="/about" element={<About />} />
-        <Route path="/experience" element={<Skills />} />
+        <Route path="/experience" element={<Stack />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <div className="py-2 text-center text-sm dark:bg-fuchsia-900/30">

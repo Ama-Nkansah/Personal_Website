@@ -1,104 +1,45 @@
-
 export const Expertise = () => {
+  const skills = [
+    { name: "Frontend Development", percent: 90, color: "bg-fuchsia-500" },
+    { name: "React & Ecosystem", percent: 85, color: "bg-blue-500" },
+    { name: "Backend (Node/Express)", percent: 70, color: "bg-green-500" },
+    { name: "UI/UX Design", percent: 75, color: "bg-purple-500" },
+  ];
+
   return (
-    <div className="flex items-center justify-center gap-5 mt-20 flex-wrap">
-
-      {/* Technologies */}
-      <div className="w-100 h-auto p-6 rounded-2xl backdrop-blur-md border-black/20 bg-black/20 dark:bg-black/50 border dark:border-white/20 shadow-md my-10">
-        <h1 className="text-black dark:text-white font-semibold text-lg mb-5">Technologies</h1>
-
-        {/* JavaScript */}
-        <div className="mt-5">
-          <div className="bg-gray-300 border border-black h-3 w-full rounded-full overflow-hidden">
-            <div className="h-full bg-fuchsia-400 w-[90%]"></div>
+    <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700">
+      <h2 className="text-2xl font-bold mb-6">Technical Proficiency</h2>
+      
+      <div className="space-y-6">
+        {skills.map((skill, index) => (
+          <div key={index}>
+            <div className="flex justify-between mb-2">
+              <span className="font-semibold text-gray-700 dark:text-gray-200">{skill.name}</span>
+              <span className="text-gray-500 dark:text-gray-400 text-sm">{skill.percent}%</span>
+            </div>
+            
+            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+              <div 
+                className={`h-full rounded-full ${skill.color} relative`}
+                style={{ width: `${skill.percent}%` }}
+              >
+                {/* Shine effect on the bar */}
+                <div className="absolute top-0 right-0 bottom-0 w-full bg-gradient-to-l from-white/30 to-transparent"></div>
+              </div>
+            </div>
           </div>
-          <div className="flex justify-between text-sm text-black dark:text-white mt-1">
-            <span>JavaScript</span>
-            <span>90%</span>
-          </div>
-        </div>
-
-        {/* React */}
-        <div className="mt-5">
-          <div className="bg-gray-300 border border-black h-3 w-full rounded-full overflow-hidden">
-            <div className="h-full bg-fuchsia-400 w-[75%]"></div>
-          </div>
-          <div className="flex justify-between text-sm text-black dark:text-white mt-1">
-            <span>React</span>
-            <span>75%</span>
-          </div>
-        </div>
-
-        {/* HTML */}
-        <div className="mt-5">
-          <div className="bg-gray-300 border border-black h-3 w-full rounded-full overflow-hidden">
-            <div className="h-full bg-fuchsia-400 w-[60%]"></div>
-          </div>
-          <div className="flex justify-between text-sm text-black dark:text-white mt-1">
-            <span>HTML</span>
-            <span>60%</span>
-          </div>
-        </div>
-
-        {/* CSS */}
-        <div className="mt-5">
-          <div className="bg-gray-300 border border-black h-3 w-full rounded-full overflow-hidden">
-            <div className="h-full bg-fuchsia-400 w-[80%]"></div>
-          </div>
-          <div className="flex justify-between text-sm text-black dark:text-white mt-1">
-            <span>Node/Express.JS</span>
-            <span>80%</span>
-          </div>
-        </div>
+        ))}
       </div>
 
-      {/* Development Tools */}
-      <div className="w-100 h-auto p-6 rounded-2xl backdrop-blur-md border-black/20 bg-black/20 dark:bg-black/50 border dark:border-white/20 shadow-md my-10">
-        <h1 className="text-black dark:text-white font-semibold text-lg mb-5">Development Tools</h1>
-
-        {/* VS Code */}
-        <div className="mt-5">
-          <div className="bg-gray-300 border border-black h-3 w-full rounded-full overflow-hidden">
-            <div className="h-full bg-fuchsia-400 w-[95%]"></div>
-          </div>
-          <div className="flex justify-between text-sm text-black dark:text-white mt-1">
-            <span>VS Code</span>
-            <span>95%</span>
-          </div>
-        </div>
-
-        {/* Git */}
-        <div className="mt-5">
-          <div className="bg-gray-300 border border-black h-3 w-full rounded-full overflow-hidden">
-            <div className="h-full bg-fuchsia-400 w-[55%]"></div>
-          </div>
-          <div className="flex justify-between text-sm text-black dark:text-white mt-1">
-            <span>AWS</span>
-            <span>55%</span>
-          </div>
-        </div>
-
-        {/* GitHub */}
-        <div className="mt-5">
-          <div className="bg-gray-300 border border-black h-3 w-full rounded-full overflow-hidden">
-            <div className="h-full bg-fuchsia-400 w-[90%]"></div>
-          </div>
-          <div className="flex justify-between text-sm text-black dark:text-white mt-1">
-            <span>Git & GitHub</span>
-            <span>70%</span>
-          </div>
-        </div>
-
-        {/* Terminal */}
-        <div className="mt-5">
-          <div className="bg-gray-300 border border-black h-3 w-full rounded-full overflow-hidden">
-            <div className="h-full bg-fuchsia-400 w-[70%]"></div>
-          </div>
-          <div className="flex justify-between text-sm text-black dark:text-white mt-1">
-            <span>Terminal</span>
-            <span>70%</span>
-          </div>
-        </div>
+      <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700">
+         <h3 className="font-bold mb-4 text-gray-800 dark:text-gray-200">Tools I use daily:</h3>
+         <div className="flex flex-wrap gap-2">
+            {["VS Code", "Figma", "Postman", "Vercel", "Git/GitHub", "Linux"].map((tool) => (
+              <span key={tool} className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded-full font-medium">
+                {tool}
+              </span>
+            ))}
+         </div>
       </div>
     </div>
   );

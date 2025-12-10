@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import myImage from "../../assets/cartoonify.jpg";
+import myImage from "../../../public/assets/cartoonify.jpg";
 import Title from "../home/TypewriterTitle";
 import { SocialIcons } from "../common/socials";
 import Button from "../common/button";
