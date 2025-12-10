@@ -40,9 +40,9 @@ export default function AboutMPA() {
 
          {/* Right: The Narrative */}
           <div className="order-2 lg:order-2 space-y-6">
-            <div className="bg-fuchsia-50 dark:bg-gray-900 p-8 rounded-3xl border border-fuchsia-100 dark:border-gray-800 shadow-sm relative">
+            <div className="bg-fuchsia-100 dark:bg-gray-900 p-8 rounded-3xl border border-fuchsia-100 dark:border-gray-800 shadow-sm relative">
               {/* Decorative Quote Icon */}
-              <span className="absolute -top-7 left-8 text-6xl text-fuchsia-200 dark:text-fuchsia-900 font-serif">“</span>
+              <span className="absolute -top-7 left-8 text-6xl text-fuchsia-400 dark:text-fuchsia-900 font-serif">“</span>
               
               <p className="text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300 delius-regular relative z-10">
                 This space captures pieces of me snapshots from events I’ve attended,
@@ -57,7 +57,7 @@ export default function AboutMPA() {
                 Whether I was behind the scenes lending a hand, standing in front of a crowd, 
                 or simply showing up to learn and grow, each moment has played a part in shaping who I’m becoming.
               </p>
-                <span className="absolute left-69 text-6xl text-fuchsia-200 dark:text-fuchsia-900 font-serif">„</span>
+                <span className="absolute left-69 text-6xl md:left-130 text-fuchsia-400 dark:text-fuchsia-900 font-serif">„</span>
             </div>
          </div>
      </div>

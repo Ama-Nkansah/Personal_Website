@@ -51,7 +51,7 @@ export default function AboutTeaser() {
       </div>
 
       {/* --- PART 2: The Approach (Cards) --- */}
-      <div className="bg-gray-50 dark:bg-[#21292c] py-20">
+      <div className="bg-fuchsia-200/50 dark:bg-[#21292c] py-20">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">My Approach</h2>

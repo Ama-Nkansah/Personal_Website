@@ -7,10 +7,12 @@ import Home from "./pages/Home";
 import {NotFound} from "./pages/NotFound";
 import { Navbar } from "./components/common/menu";
 import { ThemeToggle } from "./components/home/ThemeToggle";
+import {Logo} from "./components/common/my-logo";
 
 function App() {    
   return (
     <div>
+    <Logo />
     <Navbar />
     <ThemeToggle />
       <Routes>
