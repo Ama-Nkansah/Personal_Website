@@ -3,14 +3,14 @@ import myImage from "../../assets/cartoonify.jpg";
 import Title from "../home/TypewriterTitle";
 import { SocialIcons } from "../common/socials";
 import Button from "../common/button";
+import {Logo} from "../../components/common/my-logo";
 
 function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-5 md:mt-9 md:px-12 lg:px-20">
+       <Logo />
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 items-center">
-        
 
-        
         {/* --- Image Content (Right on Desktop, Bottom on Mobile) --- */}
        <div className="flex justify-center items-center order-1 lg:order-1 relative">
           <motion.div

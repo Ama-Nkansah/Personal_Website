@@ -35,15 +35,15 @@ export const Navbar = () => {
         </nav>
       </div>
 
-      <div className="fixed top-5 md:hidden z-[60]">
+      <div className="fixed top-5 right-5 md:hidden z-[80]">
         <button 
           onClick={() => setIsOpen(!isOpen)}
           className="p-2"
         >
           {isOpen ? (
-            <X size={30} className="text-gray-900 dark:text-gray-100" />
+            <X size={25} className="text-gray-900 dark:text-gray-100" />
           ) : (
-            <Menu size={30} className="text-gray-900 dark:text-gray-100" />
+            <Menu size={25} className="text-gray-900 dark:text-gray-100" />
           )}
         </button>
       </div>

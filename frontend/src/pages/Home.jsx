@@ -1,7 +1,5 @@
-import { Navbar } from "../components/common/menu";
+
 import { Hero } from "../components/home/Hero";
-import { ThemeToggle } from "../components/home/ThemeToggle";
-import { Footer } from "../components/common/footer";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -13,10 +11,6 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="relative"
       >
-        {/* Fixed Elements */}
-        <Navbar />
-        <ThemeToggle />
-
         {/* Main Content */}
         <Hero />
       </motion.main>
