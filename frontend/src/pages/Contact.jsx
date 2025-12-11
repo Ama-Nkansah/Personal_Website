@@ -1,99 +1,183 @@
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Linkedin } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { Mail, MapPin, Linkedin, Send, Loader2, CheckCircle2 } from "lucide-react";
 
 export default function Contact() {
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(false);
+
+    // 🔴 REPLACE THESE STRINGS WITH YOUR ACTUAL EMAILJS KEYS (Instructions below)
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",   
+        "YOUR_TEMPLATE_ID",   
+        formRef.current,
+        "YOUR_PUBLIC_KEY"
+      )
+      .then(
+        (result) => {
+          setLoading(false);
+          setSuccess(true);
+          e.target.reset(); // Clear the form
+          setTimeout(() => setSuccess(false), 5000); // Reset success message after 5s
+        },
+        (error) => {
+          setLoading(false);
+          setError(true);
+          console.error(error.text);
+        }
+      );
+  };
+
   return (
-    <section
-      id="contact"
-      className="py-20 px-6 md:px-16 bg-gray-50 dark:bg-[#2b3336]"
-    >
-      <div className="max-w-4xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white"
-        >
-          Get in Touch
-        </motion.h2>
-
-        <p className="text-gray-600 dark:text-gray-300 mb-12">
-          Have a question, idea, or just want to say hi? I’d love to hear from
-          you!
-        </p>
-
-        {/* Contact Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex flex-col items-center bg-[#dfe9ec] dark:bg-[#353c3e] p-6 rounded-2xl shadow-md"
+    <section id="contact" className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight"
           >
-            <Mail className="h-8 w-8 text-fuchsia-600 dark:text-fuchsia-400 mb-4" />
-            <h3 className="font-semibold text-gray-900 dark:text-white">Email</h3>
-            <a
-              href="mailto:amankansahstate@gmail.com"
-              className="text-gray-600 dark:text-gray-300 mt-2 hover:text-fuchsia-600 dark:hover:text-fuchsia-400"
-            >
-              amankansahstate@gmail.com
-            </a>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex flex-col items-center bg-[#dfe9ec] dark:bg-[#353c3e] p-6 rounded-2xl shadow-md"
-          >
-            <Linkedin className="h-8 w-8 text-fuchsia-600 dark:text-fuchsia-400 mb-4" />
-            <h3 className="font-semibold text-gray-900 dark:text-white">LinkedIn</h3>
-            <a
-              href="https://www.linkedin.com/in/amankansah" // replace with your LinkedIn
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-300 mt-2 hover:text-fuchsia-600 dark:hover:text-fuchsia-400"
-            >
-              Connect with me
-            </a>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex flex-col items-center bg-[#dfe9ec] dark:bg-[#353c3e] p-6 rounded-2xl shadow-md"
-          >
-            <MapPin className="h-8 w-8 text-fuchsia-600 dark:text-fuchsia-400 mb-4" />
-            <h3 className="font-semibold text-gray-900 dark:text-white">Location</h3>
-            <p className="text-gray-600 dark:text-gray-300 mt-2">Kumasi, Ghana</p>
-          </motion.div>
+            Let's Start a <span className="text-fuchsia-600 dark:text-fuchsia-400">Conversation</span>
+          </motion.h2>
+          <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg">
+            Whether you have a project in mind or just want to chat, I'm all ears.
+          </p>
         </div>
 
-        <motion.form
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          action="/contact"
-          method="POST"
-          className="mt-16 grid gap-6 max-w-2xl mx-auto"
-        >
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="placeholder-gray-900 dark:placeholder-gray-100 p-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-[#dfe9ec] dark:bg-[#353c3e] dark:text-white focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="placeholder-gray-900 dark:placeholder-gray-100 p-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-[#dfe9ec] dark:bg-[#353c3e] dark:text-white focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
-          />
-          <textarea
-            rows="5"
-            placeholder="Your Message"
-            className="placeholder-gray-900 dark:placeholder-gray-100 p-4 rounded-xl border border-gray-300 dark:border-gray-600 bg-[#dfe9ec] dark:bg-[#353c3e] dark:text-white focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
-          ></textarea>
-          <button
-            type="submit"
-            className="w-full py-4 rounded-xl bg-fuchsia-600 text-white font-semibold hover:bg-fuchsia-700 transition duration-300 shadow-md"
-          >
-            Send Message
-          </button>
-        </motion.form>
+        <div className="grid md:grid-cols-5 gap-0 shadow-2xl rounded-3xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+          
+          {/* --- LEFT SIDE: Contact Info (Captivating Visual) --- */}
+          <div className="md:col-span-2 bg-fuchsia-300 p-10 flex flex-col justify-between relative overflow-hidden">
+            {/* Decorative circles */}
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white opacity-10 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-fuchsia-400 opacity-20 rounded-full blur-2xl"></div>
+
+            <div className="relative z-10">
+              <h3 className="text-2xl text-black font-bold mb-6">Contact Information</h3>
+              <p className="text-black mb-8 leading-relaxed">
+                Fill out the form and I will get back to you within 24 hours.
+              </p>
+              
+              <div className="space-y-6 text-black">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-white/20 backdrop-blur-md rounded-full">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <span>amankansahstate@gmail.com</span>
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-white/20 backdrop-blur-md rounded-full">
+                    <Linkedin className="w-5 h-5" />
+                  </div>
+                  <a href="https://linkedin.com/in/amankansah" target="_blank" className="hover:underline">LinkedIn</a>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-white/20 backdrop-blur-md rounded-full">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <span>Kumasi, Ghana</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links Footer */}
+            <div className="mt-12 relative z-10">
+              <p className="text-sm text-black">Connect with me on social media</p>
+            </div>
+          </div>
+
+          {/* --- RIGHT SIDE: The Functional Form --- */}
+          <div className="md:col-span-3 p-10 bg-white dark:bg-gray-900">
+             <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                    <input 
+                      type="text" 
+                      name="user_name" 
+                      required
+                      className="w-full p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all dark:text-white"
+                      placeholder="Name" 
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                    <input 
+                      type="email" 
+                      name="user_email"
+                      required
+                      className="w-full p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all dark:text-white"
+                      placeholder="you@example.com" 
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
+                  <input 
+                    type="text" 
+                    name="subject" 
+                    required
+                    className="w-full p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all dark:text-white"
+                    placeholder="Project Inquiry" 
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                  <textarea 
+                    name="message" // Required for EmailJS
+                    rows="4" 
+                    required
+                    className="w-full p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all dark:text-white resize-none"
+                    placeholder="Tell me about your project..." 
+                  ></textarea>
+                </div>
+
+                <button 
+                  type="submit" 
+                  disabled={loading}
+                  className="w-full md:w-auto px-8 py-3 rounded-xl bg-fuchsia-300 hover:bg-fuchsia-400 text-black font-semibold transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg hover:shadow-fuchsia-500/30"
+                >
+                  {loading ? (
+                    <>
+                      <Loader2 className="animate-spin w-5 h-5" /> Sending...
+                    </>
+                  ) : success ? (
+                    <>
+                      <CheckCircle2 className="w-5 h-5" /> Sent Successfully!
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" /> Send Message
+                    </>
+                  )}
+                </button>
+
+                {error && (
+                  <p className="text-red-500 text-sm mt-2 text-center">
+                    Something went wrong. Please try again or email me directly.
+                  </p>
+                )}
+             </form>
+          </div>
+
+        </div>
       </div>
     </section>
   );

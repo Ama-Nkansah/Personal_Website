@@ -8,6 +8,7 @@ import {NotFound} from "./pages/NotFound";
 import { Navbar } from "./components/common/menu";
 import { ThemeToggle } from "./components/home/ThemeToggle";
 import {Logo} from "./components/common/my-logo";
+import { Blog } from "./pages/Blog";
 
 function App() {    
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/experience" element={<Stack />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       <div className="py-2 text-center text-sm dark:bg-fuchsia-900/30">
           <Footer />

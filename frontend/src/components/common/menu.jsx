@@ -20,7 +20,7 @@ export const Navbar = () => {
       <div className="relative">
         <nav
           className={cn(
-            "z-10 top-7 left-1/3 translate-x-18 fixed md:flex items-center gap-5 rounded-full py-2 px-4 backdrop-blur-md bg-black/5 text-black dark:bg-fuchsia-200 transition-all duration-300 border-zinc-500 hidden"
+            "z-80 top-7 left-1/3 translate-x-18 fixed md:flex items-center gap-5 rounded-full py-2 px-4 backdrop-blur-md bg-black/20 text-black dark:bg-fuchsia-200 transition-all duration-300 border-zinc-500 hidden"
           )}
         >
           {navlinks.map((link) => (
