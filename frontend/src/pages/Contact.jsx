@@ -1,48 +1,66 @@
-import { useState, useRef } from "react";
-import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-import { Mail, MapPin, Linkedin, Send, Loader2, CheckCircle2 } from "lucide-react";
+import { useState, useRef } from "react"
+import { motion } from "framer-motion"
+import emailjs from "@emailjs/browser"
+import { Mail, MapPin, Linkedin, Send, Loader2, CheckCircle2 } from "lucide-react"
 
 export default function Contact() {
-  const formRef = useRef();
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  const formRef = useRef(null)
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState(false)
 
   const sendEmail = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(false);
+    e.preventDefault()
+    setLoading(true)
+    setError(false)
 
+    if (
+      !formRef.current ||
+      !import.meta.env.VITE_EMAILJS_SERVICE_ID ||
+      !import.meta.env.VITE_EMAILJS_TEMPLATE_ID ||
+      !import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    ) {
+      setError(true)
+      setLoading(false)
+      console.error("Missing EmailJS config or form reference!")
+      return
+    }
 
-          emailjs.sendForm(
+    emailjs
+      .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
-        (result) => {
-          setLoading(false);
-          setSuccess(true);
-          e.target.reset(); // Clear the form
-          setTimeout(() => setSuccess(false), 5000); // Reset success message after 5s
-        },
-        (error) => {
-          setLoading(false);
-          setError(true);
-          console.error(error.text);
+      (result) => {
+        setLoading(false)
+        setSuccess(true)
+
+        if (formRef.current) {
+          formRef.current.reset()
         }
-      );
-  };
+
+        setTimeout(() => setSuccess(false), 5000)
+      },
+      (error) => {
+        setLoading(false)
+        setError(true)
+        console.error("EmailJS error:", error.text)
+        }
+      )
+  }
 
   return (
-    <section id="contact" className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+    <section
+      id="contact"
+      className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-950 transition-colors duration-300"
+    >
       <div className="max-w-6xl mx-auto">
-        
         {/* Header */}
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -56,10 +74,8 @@ export default function Contact() {
         </div>
 
         <div className="grid md:grid-cols-5 gap-0 shadow-2xl rounded-3xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-          
-          {/* --- LEFT SIDE: Contact Info (Captivating Visual) --- */}
+          {/* --- LEFT SIDE: Contact Info --- */}
           <div className="md:col-span-2 bg-fuchsia-300 p-10 flex flex-col justify-between relative overflow-hidden">
-            {/* Decorative circles */}
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white opacity-10 rounded-full blur-2xl"></div>
             <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-fuchsia-400 opacity-20 rounded-full blur-2xl"></div>
 
@@ -68,7 +84,7 @@ export default function Contact() {
               <p className="text-black mb-8 leading-relaxed">
                 Fill out the form and I will get back to you within 24 hours.
               </p>
-              
+
               <div className="space-y-6 text-black">
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-white/20 backdrop-blur-md rounded-full">
@@ -76,12 +92,14 @@ export default function Contact() {
                   </div>
                   <span>amankansahstate@gmail.com</span>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-white/20 backdrop-blur-md rounded-full">
                     <Linkedin className="w-5 h-5" />
                   </div>
-                  <a href="https://linkedin.com/in/amankansah" target="_blank" className="hover:underline">LinkedIn</a>
+                  <a href="https://linkedin.com/in/amankansah" target="_blank" className="hover:underline">
+                    LinkedIn
+                  </a>
                 </div>
 
                 <div className="flex items-center gap-4">
@@ -93,91 +111,88 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Social Links Footer */}
             <div className="mt-12 relative z-10">
               <p className="text-sm text-black">Connect with me on social media</p>
             </div>
           </div>
 
-          {/* --- RIGHT SIDE: The Functional Form --- */}
+          {/* --- RIGHT SIDE: Form --- */}
           <div className="md:col-span-3 p-10 bg-white dark:bg-gray-900">
-             <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
-                    <input 
-                      type="text" 
-                      name="user_name" 
-                      required
-                      className="w-full p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all dark:text-white"
-                      placeholder="Name" 
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-                    <input 
-                      type="email" 
-                      name="user_email"
-                      required
-                      className="w-full p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all dark:text-white"
-                      placeholder="you@example.com" 
-                    />
-                  </div>
-                </div>
-
+            <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
-                  <input 
-                    type="text" 
-                    name="subject" 
+                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                  <input
+                    type="text"
+                    name="user_name"
                     required
+                    placeholder="Name"
                     className="w-full p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all dark:text-white"
-                    placeholder="Project Inquiry" 
                   />
                 </div>
-
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
-                  <textarea 
-                    name="message" // Required for EmailJS
-                    rows="4" 
+                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                  <input
+                    type="email"
+                    name="user_email"
                     required
-                    className="w-full p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all dark:text-white resize-none"
-                    placeholder="Tell me about your project..." 
-                  ></textarea>
+                    placeholder="you@example.com"
+                    className="w-full p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all dark:text-white"
+                  />
                 </div>
+              </div>
 
-                <button 
-                  type="submit" 
-                  disabled={loading}
-                  className="w-full md:w-auto px-8 py-3 rounded-xl bg-fuchsia-300 hover:bg-fuchsia-400 text-black font-semibold transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg hover:shadow-fuchsia-500/30"
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 className="animate-spin w-5 h-5" /> Sending...
-                    </>
-                  ) : success ? (
-                    <>
-                      <CheckCircle2 className="w-5 h-5" /> Sent Successfully!
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" /> Send Message
-                    </>
-                  )}
-                </button>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  required
+                  placeholder="Project Inquiry"
+                  className="w-full p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all dark:text-white"
+                />
+              </div>
 
-                {error && (
-                  <p className="text-red-500 text-sm mt-2 text-center">
-                    Something went wrong. Please try again or email me directly.
-                  </p>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                <textarea
+                  name="message"
+                  rows={4}
+                  required
+                  placeholder="Tell me about your project..."
+                  className="w-full p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all dark:text-white resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full md:w-auto px-8 py-3 rounded-xl bg-fuchsia-300 hover:bg-fuchsia-400 text-black font-semibold transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg hover:shadow-fuchsia-500/30"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="animate-spin w-5 h-5" /> Sending...
+                  </>
+                ) : success ? (
+                  <>
+                    <CheckCircle2 className="w-5 h-5" /> Sent Successfully!
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" /> Send Message
+                  </>
                 )}
-             </form>
-          </div>
+              </button>
 
+              {error && (
+                <p className="text-red-500 text-sm mt-2 text-center">
+                  Something went wrong. Please try again or email me directly.
+                </p>
+              )}
+            </form>
+          </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
