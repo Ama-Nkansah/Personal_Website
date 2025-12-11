@@ -14,13 +14,12 @@ export default function Contact() {
     setLoading(true);
     setError(false);
 
-    // 🔴 REPLACE THESE STRINGS WITH YOUR ACTUAL EMAILJS KEYS (Instructions below)
-    emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID",   
-        "YOUR_TEMPLATE_ID",   
+
+          emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        "YOUR_PUBLIC_KEY"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
